@@ -1,0 +1,80 @@
+name: Generate article covers
+
+# Run it from GitHub: Actions → "Generate article covers" → Run workflow.
+# Leave "articles" empty to make covers for every article that has none,
+# or list slugs / article URLs / titles (one per line or comma-separated)
+# to regenerate those. The prompt lives in resources/data/cover-prompt.txt.
+# Needs the GEMINI_API_KEY repository secret.
+on:
+  workflow_dispatch:
+    inputs:
+      articles:
+        description: 'Articles to (re)generate: slugs, URLs or titles. Empty = all articles without a cover'
+        required: false
+        default: ''
+      model:
+        description: 'Gemini image model'
+        type: choice
+        default: gemini-3.1-flash-image
+        options:
+          - gemini-3.1-flash-image
+          - gemini-3.1-flash-lite-image
+          - gemini-3-pro-image
+          - gemini-2.5-flash-image
+      limit:
+        description: 'Max images this run (0 = no limit)'
+        required: false
+        default: '0'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: generate-covers
+
+jobs:
+  covers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Generate covers
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ARTICLES: ${{ inputs.articles }}
+        run: python3 scripts/generate-covers.py --model "${{ inputs.model }}" --limit "${{ inputs.limit }}" "$ARTICLES"
+
+      - name: Commit new covers
+        id: commit
+        run: |
+          git add public/images/articles
+          if git diff --cached --quiet; then
+            echo "No new covers to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Generate article covers"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made by this workflow don't trigger other workflows, so start
+      # the static export (and with it the Vercel deploy) explicitly.
+      - name: Rebuild the site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run static-preview.yml --ref "${GITHUB_REF_NAME}"

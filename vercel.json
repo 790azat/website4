@@ -1,0 +1,14 @@
+{
+    "framework": null,
+    "installCommand": "",
+    "buildCommand": "rm -rf .vercel-static && git clone --depth 1 --branch static https://github.com/790azat/website4.git .vercel-static && rm -rf .vercel-static/.git",
+    "outputDirectory": ".vercel-static",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "git": {
+        "deploymentEnabled": {
+            "**": false,
+            "static": true
+        }
+    }
+}

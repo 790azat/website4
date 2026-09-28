@@ -1,0 +1,309 @@
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --color-zinc-50: #f7f7f5;
+    --color-zinc-100: #efefec;
+    --color-zinc-200: #e0e0dc;
+    --color-zinc-300: #c9c9c4;
+    --color-zinc-400: #9c9c96;
+    --color-zinc-500: #6f6f6a;
+    --color-zinc-600: #52524e;
+    --color-zinc-700: #3b3b38;
+    --color-zinc-800: #262624;
+    --color-zinc-900: #171716;
+    --color-zinc-950: #0c0c0b;
+
+    /* CrashLedger brand: cobalt "ledger ink" blue */
+    --color-brand-50: #eef3ff;
+    --color-brand-100: #dce6ff;
+    --color-brand-200: #b9ccff;
+    --color-brand-300: #8aa8ff;
+    --color-brand-400: #5b80fa;
+    --color-brand-500: #3a5ff0;
+    --color-brand-600: #2447d6;
+    --color-brand-700: #1c37ad;
+    --color-brand-800: #1b3089;
+    --color-brand-900: #1b2c6d;
+    --color-brand-950: #121b42;
+
+    /* Asphalt graphite for dark bands (header, footer, callouts).
+       Kept under the "navy" name so every view shares one set of tokens. */
+    --color-navy-300: #aab0ba;
+    --color-navy-400: #818895;
+    --color-navy-500: #5d6470;
+    --color-navy-600: #434954;
+    --color-navy-700: #2f343d;
+    --color-navy-800: #22262d;
+    --color-navy-900: #171a1f;
+    --color-navy-950: #0e1013;
+
+    /* Secondary highlight: hazard / road-sign yellow */
+    --color-zest-200: #fff0b3;
+    --color-zest-300: #ffe066;
+    --color-zest-400: #ffcf1a;
+    --color-zest-500: #e6b400;
+
+    /* Semantic surface tokens (redefined for dark mode below) */
+    --color-paper: #f3f3f0;
+    --color-surface: #ffffff;
+    --color-soft: #e9e9e4;
+    --color-line: #dcdcd5;
+    --color-ink: #121418;
+    --color-body: #363a42;
+    --color-muted: #666b75;
+
+    --color-accent: var(--color-brand-600);
+    --color-accent-content: var(--color-brand-700);
+    --color-accent-foreground: var(--color-white);
+}
+
+@layer theme {
+    .dark {
+        --color-paper: #0e1013;
+        --color-surface: #16191e;
+        --color-soft: #1e2228;
+        --color-line: #2c3139;
+        --color-ink: #f2f3f5;
+        --color-body: #c9cdd4;
+        --color-muted: #969ca7;
+
+        --color-accent: var(--color-brand-400);
+        --color-accent-content: var(--color-brand-300);
+        --color-accent-foreground: var(--color-navy-950);
+    }
+}
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-line, currentColor);
+    }
+
+    h1, h2, h3, .font-display {
+        font-optical-sizing: auto;
+    }
+}
+
+@layer components {
+    /* Small uppercase label above headings: a yellow ledger tab + mono text */
+    .eyebrow {
+        @apply inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[0.18em] text-brand-600 uppercase dark:text-brand-300;
+    }
+
+    .eyebrow::before {
+        content: '';
+        @apply h-3 w-1.5 bg-zest-400;
+    }
+
+    /* Diagonal hazard stripes (yellow/graphite), used as thin rules */
+    .hazard {
+        background-image: repeating-linear-gradient(-45deg, var(--color-zest-400) 0 10px, var(--color-navy-950) 10px 20px);
+    }
+
+    /* Primary button: square corners, solid cobalt */
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-sm bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:bg-brand-500 dark:hover:bg-brand-400;
+    }
+
+    .btn-zest {
+        @apply inline-flex items-center justify-center gap-2 rounded-sm bg-zest-400 px-6 py-3 text-sm font-bold text-navy-950 shadow-[4px_4px_0_0_var(--color-navy-950)] transition hover:translate-x-px hover:translate-y-px hover:bg-zest-300 hover:shadow-[3px_3px_0_0_var(--color-navy-950)];
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 rounded-sm border border-ink bg-transparent px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-paper;
+    }
+
+    /* Section tag chip on cards */
+    .tag {
+        @apply inline-flex w-fit items-center gap-1.5 rounded-sm bg-zest-400 px-2 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase;
+    }
+
+    .card {
+        @apply rounded-sm border border-line bg-surface;
+    }
+
+    .link-underline {
+        @apply underline decoration-brand-500 decoration-2 underline-offset-4 transition hover:decoration-zest-400;
+    }
+}
+
+/* Rendered article Markdown (App\Support\ArticleMarkdown) */
+@layer components {
+    .article-body {
+        @apply text-[1.075rem] leading-[1.85] text-body;
+    }
+
+    .article-body > * + * {
+        @apply mt-6;
+    }
+
+    .article-body h2 {
+        @apply mt-14 scroll-mt-36 border-t border-ink/15 pt-8 font-display text-3xl leading-tight font-extrabold tracking-tight text-ink;
+    }
+
+    .article-body h3 {
+        @apply mt-10 font-display text-2xl leading-snug font-bold text-ink;
+    }
+
+    .article-body h4 {
+        @apply mt-8 text-lg font-bold text-ink;
+    }
+
+    .article-body h2 + *,
+    .article-body h3 + *,
+    .article-body h4 + * {
+        @apply mt-4;
+    }
+
+    .article-body strong {
+        @apply font-bold text-ink;
+    }
+
+    .article-body a:not(.btn-primary) {
+        @apply font-medium text-brand-700 underline decoration-brand-300 decoration-2 underline-offset-4 transition hover:decoration-brand-600 dark:text-brand-300 dark:decoration-brand-700 dark:hover:decoration-brand-400;
+    }
+
+    .article-body ul {
+        @apply space-y-3;
+    }
+
+    .article-body ul > li {
+        @apply relative pl-7;
+    }
+
+    .article-body ul > li::before {
+        content: '';
+        @apply absolute top-[0.55em] left-1 h-2.5 w-1.5 bg-zest-400 ring-1 ring-navy-950/80;
+    }
+
+    .article-body ol {
+        counter-reset: step;
+        @apply space-y-4;
+    }
+
+    .article-body ol > li {
+        counter-increment: step;
+        @apply relative pl-11;
+    }
+
+    .article-body ol > li::before {
+        content: counter(step);
+        @apply absolute top-0.5 left-0 flex size-7 items-center justify-center rounded-sm bg-navy-900 font-mono text-xs font-semibold text-zest-300 dark:bg-navy-700;
+    }
+
+    .article-body li > ul,
+    .article-body li > ol {
+        @apply mt-3;
+    }
+
+    .article-body blockquote {
+        @apply border-l-4 border-brand-500 bg-brand-50 px-6 py-4 text-ink dark:bg-brand-950/40;
+    }
+
+    .article-body hr {
+        @apply my-12 border-line;
+    }
+
+    .article-body .table-wrap {
+        @apply overflow-x-auto rounded-sm border border-line bg-surface;
+    }
+
+    .article-body table {
+        @apply w-full border-collapse text-left text-sm leading-relaxed sm:text-[0.95rem];
+    }
+
+    .article-body th {
+        @apply bg-navy-900 px-3 py-3 text-sm font-semibold text-white sm:px-5 sm:py-3.5 dark:bg-navy-800;
+    }
+
+    .article-body td {
+        @apply border-t border-line px-3 py-3 align-top sm:px-5 sm:py-3.5;
+    }
+
+    .article-body tbody tr:nth-child(even) {
+        @apply bg-paper/60;
+    }
+
+    .article-body td:first-child {
+        @apply font-semibold text-ink;
+    }
+
+    .article-body .references {
+        @apply mt-16 rounded-sm border border-dashed border-line bg-surface p-7 text-sm leading-relaxed text-muted;
+    }
+
+    .article-body .references h2 {
+        @apply mt-0 border-0 pt-0 font-mono text-xs font-semibold tracking-[0.16em] text-brand-700 uppercase dark:text-brand-300;
+    }
+
+    .article-body .references ul {
+        @apply mt-5 space-y-2.5;
+    }
+
+    .article-body .references li {
+        @apply pl-5;
+    }
+
+    .article-body .references li::before {
+        @apply top-[0.6em] left-0 size-1.5 ring-0;
+    }
+
+    .article-body .references a {
+        @apply text-sm;
+    }
+}
+
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply  !mb-0 !leading-tight;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* Homepage hero: rotating article slides. The timer bar's animationend
+   advances the slide, so pausing the animation (hover/focus) pauses rotation. */
+@keyframes hero-timer {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.hero-timer {
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.hero-timer.is-running {
+    animation: hero-timer 5s linear forwards;
+}
+
+.hero-rotator:hover .hero-timer,
+.hero-rotator:focus-within .hero-timer {
+    animation-play-state: paused;
+}

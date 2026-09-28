@@ -1,0 +1,83 @@
+name: Deploy to server (rsync over SSH)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Restore file timestamps from git history
+        uses: chetan/git-restore-mtime-action@v2
+
+      - name: Write production .env
+        run: printf '%s' "${{ secrets.ENV_FILE }}" > .env
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          tools: composer:v2
+          coverage: none
+
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader --prefer-dist
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build frontend assets
+        run: npm run build
+
+      # Upload to the server (SFTP/rsync) is temporarily disabled; every
+      # other step still runs on each push. To re-enable, remove the
+      # `if: false` lines on this step and the next one.
+      - name: Install rsync tools
+        if: false
+        run: sudo apt-get update && sudo apt-get install -y sshpass rsync
+
+      - name: Deploy via rsync over SSH
+        if: false
+        env:
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          set -e
+          sshpass -e rsync -az --stats \
+            -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.idea' \
+            --exclude='.claude' \
+            --exclude='node_modules' \
+            --exclude='tests' \
+            --exclude='.env.example' \
+            --exclude='.env.production' \
+            --exclude='.editorconfig' \
+            --exclude='.gitattributes' \
+            --exclude='.npmrc' \
+            --exclude='boost.json' \
+            --exclude='phpstan.neon' \
+            --exclude='phpunit.xml' \
+            --exclude='pint.json' \
+            --exclude='CLAUDE.md' \
+            --exclude='Claude outputs' \
+            --exclude='/storage/logs' \
+            --exclude='/storage/framework/cache' \
+            --exclude='/storage/framework/sessions' \
+            --exclude='/storage/framework/views' \
+            --exclude='/public/storage' \
+            --exclude='/public/hot' \
+            ./ "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}"

@@ -1,0 +1,3 @@
+Generate a cover photo (2d) for an article. Make it relevant to the headline but don't include it in the photo. Make it a closeup shot, very minimalistic
+
+{headline}
