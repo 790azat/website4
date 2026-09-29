@@ -123,7 +123,7 @@
                             @include('partials.avatar', ['author' => $author, 'class' => 'size-9 text-xs !ring-navy-900'])
                         @endforeach
                     </span>
-                    <span>{!! __('Written by :count in claims, injury law, and collision repair', ['count' => '<span class="font-bold text-white">'.e(trans_choice(':count specialist|:count specialists', $authors->count())).'</span>']) !!}</span>
+                    <span>{!! __('Written by :count in insurance claims, injury law, and consumer rights', ['count' => '<span class="font-bold text-white">'.e(trans_choice(':count specialist|:count specialists', $authors->count())).'</span>']) !!}</span>
                 </div>
             </div>
 
@@ -308,10 +308,10 @@
             <div class="relative px-8 py-14 sm:px-14 lg:py-20">
                 <span class="inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[0.18em] text-zest-400 uppercase before:h-3 before:w-1.5 before:bg-zest-400">{{ __('Meet the team') }}</span>
                 <h2 class="mt-5 font-display text-4xl leading-tight font-extrabold text-balance text-white sm:text-5xl">
-                    {{ __('Written by people who have worked the claims, the cases, and the repairs') }}
+                    {{ __('Written by people who have worked the claims and the cases') }}
                 </h2>
                 <p class="mt-5 max-w-lg leading-relaxed text-navy-300">
-                    {{ __('Our editors bring hands-on experience in insurance claims, personal injury law, collision repair, and auto finance.') }}
+                    {{ __('Our editors bring hands-on experience in insurance claims, policy underwriting, personal injury litigation, and consumer rights research.') }}
                 </p>
                 <a href="{{ route('team') }}" wire:navigate class="btn-zest mt-9">
                     {{ __('Meet the full team') }}
@@ -321,13 +321,13 @@
 
             <div class="grid gap-px bg-navy-800 p-px sm:grid-cols-2">
                 @foreach ($authors->take(6) as $author)
-                    <div class="flex items-center gap-3 bg-navy-900 p-5">
+                    <a href="{{ route('author', $author['key']) }}" wire:navigate class="flex items-center gap-3 bg-navy-900 p-5 transition hover:bg-navy-800">
                         @include('partials.avatar', ['author' => $author, 'class' => 'size-12 text-sm !ring-navy-700'])
                         <span class="min-w-0">
                             <span class="block truncate font-bold text-white">{{ $author['name'] }}</span>
                             <span class="line-clamp-2 text-xs text-navy-300">{{ $author['role'] }}</span>
                         </span>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>

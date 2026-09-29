@@ -36,7 +36,7 @@
                     {{ __('Our Editorial Team') }}
                 </h1>
                 <p class="mt-7 text-lg leading-relaxed text-body">
-                    {{ __('At CrashLedger.com, our editorial team brings together writers and industry-focused contributors with experience in insurance claims, personal injury law, collision repair, road safety, and auto finance. We aim to make the time after an accident easier to navigate by sharing practical guidance, useful questions to ask insurers and repair shops, and information drivers can actually use.') }}
+                    {{ __('At CrashLedger.com, our editorial team brings together writers and industry-focused contributors with experience in insurance claims, policy underwriting, personal injury law, and legal research. We aim to make the time after an accident easier to navigate by sharing practical guidance, useful questions to ask insurers and repair shops, and information drivers can actually use.') }}
                 </p>
                 <a href="#team" class="btn-primary mt-9">
                     {{ __('Meet the editors') }}
@@ -98,25 +98,26 @@
                 <span class="eyebrow">{{ __('The editors') }}</span>
                 <h2 class="mt-4 font-display text-4xl font-bold tracking-tight text-ink">{{ __('Experience you can learn from') }}</h2>
                 <p class="mt-4 leading-relaxed text-body">
-                    {{ __('Our contributors approach each topic from a different perspective, from the accident scene and the claims desk to the courtroom and the body shop. We focus on clear, helpful content designed to help drivers make informed decisions about their claims, their health, and their vehicles.') }}
+                    {{ __('Our contributors approach each topic from a different perspective, from the claims desk and the underwriter\'s office to the courtroom and the law library. We focus on clear, helpful content designed to help drivers make informed decisions about their claims, their health, and their vehicles.') }}
                 </p>
             </div>
 
-            <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($team as $member)
-                    <div class="flex flex-col rounded-sm border border-line bg-paper p-7">
+                    <a href="{{ route('author', $member['key']) }}" wire:navigate class="group flex flex-col rounded-sm border border-line bg-paper p-7 transition hover:border-ink">
                         @include('partials.avatar', ['author' => $member, 'class' => 'size-20 text-xl'])
-                        <h3 class="mt-6 font-display text-xl font-bold text-ink">{{ $member['name'] }}</h3>
+                        <h3 class="mt-6 font-display text-xl font-bold text-ink group-hover:text-brand-600 dark:group-hover:text-brand-300">{{ $member['name'] }}</h3>
                         <p class="mt-1 text-sm font-semibold text-brand-700 dark:text-brand-300">{{ $member['role'] }}</p>
                         @if (! empty($member['bio']))
                             <p class="mt-4 text-sm leading-relaxed text-muted">{{ $member['bio'] }}</p>
                         @endif
-                        @if ($member['count'])
-                            <p class="mt-auto pt-5 text-xs font-bold tracking-wide text-brand-700 uppercase dark:text-brand-300">
-                                {{ trans_choice(':count article|:count articles', $member['count']) }}
-                            </p>
-                        @endif
-                    </div>
+                        <p class="mt-auto flex items-center justify-between gap-3 pt-5 font-mono text-xs font-semibold text-brand-700 uppercase dark:text-brand-300">
+                            <span>{{ __('Read full bio') }}</span>
+                            @if ($member['count'])
+                                <span class="text-muted">{{ trans_choice(':count article|:count articles', $member['count']) }}</span>
+                            @endif
+                        </p>
+                    </a>
                 @endforeach
             </div>
         </div>

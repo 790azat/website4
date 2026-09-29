@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 Route::view('our-team', 'team')->name('team');
+Route::view('author/{slug}', 'author')->name('author');
 Route::view('contact', 'contact')->name('contact');
 Route::view('privacy-policy', 'privacy-policy')->name('privacy-policy');
 Route::view('terms-of-use', 'terms-of-use')->name('terms-of-use');

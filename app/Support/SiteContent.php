@@ -121,6 +121,7 @@ class SiteContent
 
         $author['role'] = __($author['role']);
         $author['bio'] = isset($author['bio']) ? __($author['bio']) : null;
+        $author['bio_long'] = isset($author['bio_long']) ? __($author['bio_long']) : $author['bio'];
 
         $author['key'] = $key;
         $author['photo'] = isset($author['photo'])

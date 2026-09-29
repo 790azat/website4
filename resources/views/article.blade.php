@@ -10,6 +10,7 @@
 
     $siteName = config('app.name', 'Laravel');
     $author = $article['author_info'];
+    $authorUrl = isset(SiteContent::data()['authors'][$author['key']]) ? route('author', $author['key']) : route('team');
     $rendered = \App\Support\ArticleMarkdown::render($article['body']);
     $publishedAt = \Carbon\Carbon::parse($article['date']);
 
@@ -47,7 +48,7 @@
             </h1>
 
             <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">
-                <a href="{{ route('team') }}" wire:navigate class="flex items-center gap-3">
+                <a href="{{ $authorUrl }}" wire:navigate class="flex items-center gap-3">
                     @include('partials.avatar', ['author' => $author, 'class' => 'size-12 text-sm !ring-navy-700'])
                     <span>
                         <span class="block font-bold text-white hover:text-zest-300">{{ $author['name'] }}</span>
@@ -118,7 +119,7 @@
                         @if ($author['bio'])
                             <p class="leading-relaxed text-body">{{ $author['bio'] }}</p>
                         @endif
-                        <a href="{{ route('team') }}" wire:navigate class="btn-ghost mt-6">{{ __('Meet the editors') }}</a>
+                        <a href="{{ $authorUrl }}" wire:navigate class="btn-ghost mt-6">{{ __('Read full bio') }}</a>
                     </div>
                 </div>
 
