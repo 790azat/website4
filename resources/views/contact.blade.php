@@ -26,7 +26,7 @@
         <div class="grid gap-6 lg:grid-cols-3">
             @foreach ($channels as $channel)
                 <a href="mailto:{{ $channel['email'] }}" class="group card flex flex-col p-8 transition hover:-translate-y-0.5 hover:border-brand-400 hover:shadow-xl hover:shadow-brand-900/5">
-                    <span class="flex size-14 items-center justify-center rounded-sm bg-navy-950 text-zest-400 transition group-hover:bg-brand-500 group-hover:text-white">
+                    <span class="flex size-14 items-center justify-center rounded-md bg-navy-950 text-zest-400 transition group-hover:bg-brand-500 group-hover:text-white">
                         <flux:icon name="{{ $channel['icon'] }}" class="size-7" />
                     </span>
                     <h2 class="mt-7 font-display text-2xl font-bold text-ink">{{ $channel['title'] }}</h2>
@@ -38,9 +38,9 @@
                 </a>
             @endforeach
 
-            <div class="relative flex flex-col overflow-hidden rounded-sm bg-navy-900 p-8">
+            <div class="relative flex flex-col overflow-hidden rounded-md bg-navy-900 p-8">
                 <div class="absolute -right-12 -bottom-12 size-48 rounded-full border-[24px] border-brand-500/25"></div>
-                <span class="relative flex size-14 items-center justify-center rounded-sm bg-zest-400 text-navy-950">
+                <span class="relative flex size-14 items-center justify-center rounded-md bg-zest-400 text-navy-950">
                     <flux:icon name="clock" class="size-7" />
                 </span>
                 <h2 class="relative mt-7 font-display text-2xl font-bold text-white">{{ __('Response time') }}</h2>
@@ -50,10 +50,10 @@
             </div>
         </div>
 
-        <div class="mt-10 flex gap-4 rounded-sm border border-line bg-surface p-6 text-sm leading-relaxed text-muted">
+        <div class="mt-10 flex gap-4 rounded-md border border-line bg-surface p-6 text-sm leading-relaxed text-muted">
             <flux:icon name="information-circle" class="size-6 shrink-0 text-brand-500" />
             <p>
-                {{ __(':site publishes educational and informational content only; we are not able to provide personalized legal, medical, insurance, or financial advice through this contact channel.', ['site' => $siteName]) }}
+                {{ __(':site publishes educational and informational content only; we are not able to provide personalized legal, financial, or professional advice through this contact channel.', ['site' => $siteName]) }}
             </p>
         </div>
     </section>

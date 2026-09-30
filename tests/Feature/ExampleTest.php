@@ -8,30 +8,33 @@ test('returns a successful response', function () {
     $response->assertOk();
 });
 
-test('homepage shows the first-steps checklist', function () {
-    $this->get(route('home'))
+test('homepage shows the four practice areas', function () {
+    $response = $this->get(route('home'))
         ->assertOk()
-        ->assertSee('First steps after a crash')
-        ->assertSee('Keep a claim ledger');
+        ->assertSee('in plain language.');
+
+    foreach (SiteContent::categories() as $category) {
+        $response->assertSee(route('section', $category['id']), false);
+    }
 });
 
 test('homepage has an article search', function () {
     $this->get(route('home'))
         ->assertOk()
         ->assertSee('id="hero-search"', false)
-        ->assertSee('Search claims, fault, whiplash, total loss...');
+        ->assertSee('Search custody, visas, overtime, probate...');
 });
 
 test('disclaimer page is linked from the footer', function () {
     $this->get(route('disclaimer'))
         ->assertOk()
         ->assertSee('Policies, Deadlines, and Laws Vary')
-        ->assertSee('CrashLedger.com makes no representations');
+        ->assertSee(config('app.display_domain').' makes no representations');
 
     $this->get(route('home'))
         ->assertOk()
         ->assertSee(route('disclaimer'), false)
-        ->assertSee('Insurance policies, claim deadlines, fault rules, and injury laws vary by insurer and by state.');
+        ->assertSee('Laws, filing deadlines, and procedures vary by jurisdiction and change over time.');
 });
 
 test('homepage lists the latest guides', function () {

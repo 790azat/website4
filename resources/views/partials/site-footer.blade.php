@@ -2,13 +2,13 @@
     Shared site footer. Expects $categories and $siteName (from layouts.site).
 --}}
 <footer class="bg-navy-950 text-navy-300">
-    <div class="hazard h-2"></div>
+    <div class="rule-gold"></div>
     {{-- Newsletter-style band --}}
     <div class="border-b border-navy-800">
         <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-12 md:flex-row md:items-center lg:px-8">
             <div class="max-w-2xl">
-                <p class="font-display text-3xl leading-tight font-bold text-white">{{ __('Every crash leaves a paper trail. Keep yours in order.') }}</p>
-                <p class="mt-2 text-navy-300">{{ __('Plain-language guides to accidents, insurance claims, injuries, and repairs, updated by our editors.') }}</p>
+                <p class="font-display text-3xl leading-tight font-bold text-white">{{ __('Know where you stand before you take the next step.') }}</p>
+                <p class="mt-2 text-navy-300">{{ __('Plain-language guides to injury claims, family and immigration matters, criminal and employment law, and business and property rules, updated by our editors.') }}</p>
             </div>
             <a href="{{ route('articles') }}" wire:navigate class="btn-zest shrink-0">
                 {{ __('Browse all guides') }}
@@ -24,7 +24,7 @@
                     @include('partials.logo', ['invert' => true])
                 </a>
                 <p class="mt-5 max-w-sm text-sm leading-relaxed">
-                    {{ __('Independent, research-driven guides to what happens after a car accident: claims, coverage, injuries, repairs, and settlements.') }}
+                    {{ __('Independent, research-driven guides that explain how the law works in everyday situations, from injury claims and family matters to workplace rights, business, and property.') }}
                 </p>
             </div>
 
@@ -60,9 +60,9 @@
         <div class="mt-14 space-y-3 border-t border-navy-800 pt-8 text-xs leading-relaxed text-navy-400">
             <p>
                 <span class="font-bold text-navy-300">{{ __('Disclaimer:') }}</span>
-                {{ __('The content provided on :domain is for informational and educational purposes only and should not be construed as legal, medical, insurance, or financial advice. :domain is not a law firm, insurance company, or medical provider, and our articles do not replace advice from a licensed professional who can review your specific situation.', ['domain' => $siteDomain]) }}
+                {{ __('The content provided on :domain is for informational and educational purposes only and should not be construed as legal, financial, or professional advice. :domain is not a law firm, and reading our articles does not create an attorney-client relationship or replace advice from a licensed professional who can review your specific situation.', ['domain' => $siteDomain]) }}
             </p>
-            <p>{{ __('Insurance policies, claim deadlines, fault rules, and injury laws vary by insurer and by state. Before making any claim, legal, medical, or financial decision, conduct your own research and consult a qualified, licensed professional who understands your specific situation.') }}</p>
+            <p>{{ __('Laws, filing deadlines, and procedures vary by jurisdiction and change over time. Before making any legal, financial, or personal decision, conduct your own research and consult a qualified, licensed professional who understands your specific situation.') }}</p>
             <p>{{ __(':domain makes no representations or warranties as to the accuracy, completeness, or suitability of the information contained herein, and assumes no liability for any losses or damages arising from the use of this content.', ['domain' => $siteDomain]) }}</p>
         </div>
 

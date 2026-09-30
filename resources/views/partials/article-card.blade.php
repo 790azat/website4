@@ -6,7 +6,7 @@
 @php $variant = $variant ?? 'grid'; @endphp
 
 @if ($variant === 'featured')
-    <a href="{{ route('article', $article['slug']) }}" wire:navigate class="group relative flex min-h-[26rem] items-end overflow-hidden rounded-sm bg-navy-900 lg:min-h-[32rem]">
+    <a href="{{ route('article', $article['slug']) }}" wire:navigate class="group relative flex min-h-[26rem] items-end overflow-hidden rounded-md bg-navy-900 lg:min-h-[32rem]">
         @include('partials.article-art', ['iconClass' => 'size-20'])
         <span class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/70 to-navy-950/0"></span>
         <span class="relative block w-full p-7 sm:p-10">
@@ -32,7 +32,7 @@
     </a>
 @elseif ($variant === 'compact')
     <a href="{{ route('article', $article['slug']) }}" wire:navigate class="group flex min-w-0 items-center gap-4">
-        <div class="relative flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-sm">
+        <div class="relative flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-md">
             @include('partials.article-art', ['iconClass' => 'size-7'])
         </div>
         <div class="min-w-0">
@@ -43,7 +43,7 @@
     </a>
 @else
     <a href="{{ route('article', $article['slug']) }}" wire:navigate class="group flex flex-col">
-        <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-sm">
+        <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md">
             @include('partials.article-art')
             <span class="tag absolute bottom-3 left-3">{{ $article['section_title'] }}</span>
         </div>

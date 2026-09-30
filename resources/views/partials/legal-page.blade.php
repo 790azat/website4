@@ -19,19 +19,19 @@
 <section class="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-12 lg:px-8">
     {{-- Table of contents --}}
     <aside class="lg:col-span-4">
-        <nav class="rounded-sm border border-line bg-surface p-6 lg:sticky lg:top-28" aria-label="{{ __('On this page') }}">
+        <nav class="rounded-md border border-line bg-surface p-6 lg:sticky lg:top-28" aria-label="{{ __('On this page') }}">
             <p class="text-xs font-bold tracking-[0.16em] text-muted uppercase">{{ __('On this page') }}</p>
             <ol class="mt-4 space-y-1 text-sm">
                 @foreach ($sections as $i => $block)
                     <li>
-                        <a href="#{{ Str::slug($block['heading']) }}" class="flex gap-3 rounded-sm px-3 py-2 text-body transition hover:bg-soft hover:text-brand-700 dark:hover:text-brand-300">
+                        <a href="#{{ Str::slug($block['heading']) }}" class="flex gap-3 rounded-md px-3 py-2 text-body transition hover:bg-soft hover:text-brand-700 dark:hover:text-brand-300">
                             <span class="w-5 shrink-0 font-display font-bold text-brand-500">{{ $i + 1 }}</span>
                             {{ $block['heading'] }}
                         </a>
                     </li>
                 @endforeach
                 <li>
-                    <a href="#contact-us" class="flex gap-3 rounded-sm px-3 py-2 text-body transition hover:bg-soft hover:text-brand-700 dark:hover:text-brand-300">
+                    <a href="#contact-us" class="flex gap-3 rounded-md px-3 py-2 text-body transition hover:bg-soft hover:text-brand-700 dark:hover:text-brand-300">
                         <span class="w-5 shrink-0 font-display font-bold text-brand-500">{{ count($sections) + 1 }}</span>
                         {{ __('Contact Us') }}
                     </a>
@@ -62,7 +62,7 @@
                 </div>
             @endforeach
 
-            <div id="contact-us" class="scroll-mt-28 rounded-sm bg-navy-900 p-8">
+            <div id="contact-us" class="scroll-mt-28 rounded-md bg-navy-900 p-8">
                 <h2 class="font-display text-2xl font-bold text-white">{{ __('Contact Us') }}</h2>
                 <p class="mt-3 leading-relaxed text-navy-300">
                     {!! __('If you have any questions about :doc, please reach out to us at :email or visit our :contact.', [
@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <p class="mt-10 rounded-sm border border-line bg-surface p-6 text-sm leading-relaxed text-muted">
+        <p class="mt-10 rounded-md border border-line bg-surface p-6 text-sm leading-relaxed text-muted">
             {{ $closingNote }}
         </p>
     </div>

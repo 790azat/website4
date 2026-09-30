@@ -1,6 +1,6 @@
 {{--
-    Brand logo: the chevron mark plus the "CrashLedger" wordmark, set in the
-    display font. Options: $invert (bool) for dark backgrounds, $size ('sm' | 'md').
+    Brand logo: the § mark plus the site name (config app.name) as a serif
+    wordmark. Options: $invert (bool) for dark backgrounds, $size ('sm' | 'md').
 --}}
 @php
     $invert = $invert ?? false;
@@ -9,10 +9,10 @@
 <span class="inline-flex shrink-0 items-center gap-2.5">
     @include('partials.logo-mark', ['class' => $small ? 'size-7' : 'size-9'])
     <span @class([
-        'font-display leading-none tracking-tight uppercase',
-        'text-lg' => $small,
-        'text-[1.4rem]' => ! $small,
+        'font-display leading-none font-semibold tracking-tight',
+        'text-xl' => $small,
+        'text-[1.6rem]' => ! $small,
         'text-white' => $invert,
         'text-ink' => ! $invert,
-    ])><span class="font-black">Crash</span><span class="font-semibold {{ $invert ? 'text-zest-400' : 'text-brand-600 dark:text-zest-400' }}">Ledger</span></span>
+    ])>{{ config('app.name') }}<span class="text-zest-400">.</span></span>
 </span>

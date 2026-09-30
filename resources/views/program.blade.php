@@ -49,7 +49,7 @@
         </a>
 
         @if ($program['hero_image'])
-            <div class="mt-8 mb-12 overflow-hidden rounded-sm">
+            <div class="mt-8 mb-12 overflow-hidden rounded-md">
                 <img src="{{ asset('images/'.$program['hero_image']) }}" alt="{{ $program['title'] }}" fetchpriority="high" class="aspect-video w-full object-cover" />
             </div>
         @else
@@ -59,13 +59,13 @@
         @include('partials.article-body', ['html' => $bodyHtml])
 
         {{-- Editorial team card --}}
-        <div class="mt-16 rounded-sm border border-line bg-surface p-7">
+        <div class="mt-16 rounded-md border border-line bg-surface p-7">
             <div class="flex items-center gap-3">
                 @include('partials.logo', ['size' => 'sm'])
                 <span class="text-sm font-semibold text-muted">{{ __('Editorial Team') }}</span>
             </div>
             <p class="mt-5 text-sm leading-relaxed text-body">
-                {{ __('We aim to make the time after an accident easier to navigate by sharing practical guidance, useful questions to ask insurers and repair shops, and information drivers can actually use.') }}
+                {{ __('We aim to make legal processes easier to navigate by sharing practical guidance, useful questions to ask a professional, and information readers can actually use.') }}
             </p>
             <a href="{{ route('team') }}" wire:navigate class="btn-ghost mt-6">{{ __('Learn more about our editors') }}</a>
         </div>

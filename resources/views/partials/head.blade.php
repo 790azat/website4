@@ -10,10 +10,10 @@
         location.replace('/captcha?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
     })();
 </script>
-<meta name="theme-color" content="#0e1013" />
+<meta name="theme-color" content="#0e0d0c" />
 
 <title>
-    {{ filled($title ?? null) ? $title.' — '.config('app.name', 'Laravel') : config('app.name', 'Laravel').' — '.__('Car accident & claim guides, made clear') }}
+    {{ filled($title ?? null) ? $title.' — '.config('app.name', 'Laravel') : config('app.name', 'Laravel').' — '.__('The law, explained in plain language') }}
 </title>
 
 <link rel="icon" href="/favicon.ico" sizes="any">

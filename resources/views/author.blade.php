@@ -25,7 +25,7 @@
     <section class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div class="grid gap-12 lg:grid-cols-12">
             <aside class="lg:col-span-4">
-                <div class="overflow-hidden rounded-sm border border-line bg-surface lg:sticky lg:top-36">
+                <div class="overflow-hidden rounded-md border border-line bg-surface lg:sticky lg:top-36">
                     <div class="flex items-center gap-4 border-t-4 border-zest-400 bg-navy-950 p-6">
                         @include('partials.avatar', ['author' => $author, 'class' => 'size-20 text-xl !ring-navy-700'])
                         <div class="min-w-0">
@@ -50,9 +50,9 @@
                 <span class="eyebrow">{{ __('About the author') }}</span>
                 <p class="mt-6 text-lg leading-[1.85] text-body">{{ $author['bio_long'] }}</p>
 
-                <p class="mt-10 flex gap-3 rounded-sm bg-soft p-5 text-sm leading-relaxed text-muted">
+                <p class="mt-10 flex gap-3 rounded-md bg-soft p-5 text-sm leading-relaxed text-muted">
                     <flux:icon name="information-circle" variant="mini" class="size-5 shrink-0 text-brand-500" />
-                    <span>{{ __('Our articles are for general information and are not personalized legal, medical, insurance, or financial advice.') }}</span>
+                    <span>{{ __('Our articles are for general information and are not personalized legal, financial, or professional advice.') }}</span>
                 </p>
 
                 <a href="{{ route('team') }}" wire:navigate class="btn-ghost mt-8">

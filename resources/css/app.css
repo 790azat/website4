@@ -9,77 +9,77 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Public Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --color-zinc-50: #f7f7f5;
-    --color-zinc-100: #efefec;
-    --color-zinc-200: #e0e0dc;
-    --color-zinc-300: #c9c9c4;
-    --color-zinc-400: #9c9c96;
-    --color-zinc-500: #6f6f6a;
-    --color-zinc-600: #52524e;
-    --color-zinc-700: #3b3b38;
-    --color-zinc-800: #262624;
-    --color-zinc-900: #171716;
-    --color-zinc-950: #0c0c0b;
+    --color-zinc-50: #f8f7f4;
+    --color-zinc-100: #f0eee9;
+    --color-zinc-200: #e2dfd7;
+    --color-zinc-300: #cbc7bd;
+    --color-zinc-400: #9e998e;
+    --color-zinc-500: #726d63;
+    --color-zinc-600: #55514a;
+    --color-zinc-700: #3d3a35;
+    --color-zinc-800: #282623;
+    --color-zinc-900: #181715;
+    --color-zinc-950: #0d0c0b;
 
-    /* CrashLedger brand: cobalt "ledger ink" blue */
-    --color-brand-50: #eef3ff;
-    --color-brand-100: #dce6ff;
-    --color-brand-200: #b9ccff;
-    --color-brand-300: #8aa8ff;
-    --color-brand-400: #5b80fa;
-    --color-brand-500: #3a5ff0;
-    --color-brand-600: #2447d6;
-    --color-brand-700: #1c37ad;
-    --color-brand-800: #1b3089;
-    --color-brand-900: #1b2c6d;
-    --color-brand-950: #121b42;
+    /* Brand: legal-brief gold. 500 and up are dark enough for text on paper. */
+    --color-brand-50: #fdf9e9;
+    --color-brand-100: #faf0c6;
+    --color-brand-200: #f4df8a;
+    --color-brand-300: #eccb4f;
+    --color-brand-400: #deb22a;
+    --color-brand-500: #b98f14;
+    --color-brand-600: #9a760d;
+    --color-brand-700: #7b5c0c;
+    --color-brand-800: #634a10;
+    --color-brand-900: #523e12;
+    --color-brand-950: #2f2206;
 
-    /* Asphalt graphite for dark bands (header, footer, callouts).
+    /* Ink black for dark bands (header, footer, callouts).
        Kept under the "navy" name so every view shares one set of tokens. */
-    --color-navy-300: #aab0ba;
-    --color-navy-400: #818895;
-    --color-navy-500: #5d6470;
-    --color-navy-600: #434954;
-    --color-navy-700: #2f343d;
-    --color-navy-800: #22262d;
-    --color-navy-900: #171a1f;
-    --color-navy-950: #0e1013;
+    --color-navy-300: #b3afa6;
+    --color-navy-400: #8a867d;
+    --color-navy-500: #66625b;
+    --color-navy-600: #4a4742;
+    --color-navy-700: #34322e;
+    --color-navy-800: #252321;
+    --color-navy-900: #181715;
+    --color-navy-950: #0e0d0c;
 
-    /* Secondary highlight: hazard / road-sign yellow */
-    --color-zest-200: #fff0b3;
-    --color-zest-300: #ffe066;
-    --color-zest-400: #ffcf1a;
-    --color-zest-500: #e6b400;
+    /* Highlight: the signal yellow of the article artwork */
+    --color-zest-200: #fff2b8;
+    --color-zest-300: #ffe373;
+    --color-zest-400: #fdd22b;
+    --color-zest-500: #e9bb00;
 
     /* Semantic surface tokens (redefined for dark mode below) */
-    --color-paper: #f3f3f0;
+    --color-paper: #f6f4ee;
     --color-surface: #ffffff;
-    --color-soft: #e9e9e4;
-    --color-line: #dcdcd5;
-    --color-ink: #121418;
-    --color-body: #363a42;
-    --color-muted: #666b75;
+    --color-soft: #eeebe3;
+    --color-line: #e2ded3;
+    --color-ink: #151412;
+    --color-body: #3a3833;
+    --color-muted: #6e6a61;
 
-    --color-accent: var(--color-brand-600);
+    --color-accent: var(--color-navy-950);
     --color-accent-content: var(--color-brand-700);
     --color-accent-foreground: var(--color-white);
 }
 
 @layer theme {
     .dark {
-        --color-paper: #0e1013;
-        --color-surface: #16191e;
-        --color-soft: #1e2228;
-        --color-line: #2c3139;
-        --color-ink: #f2f3f5;
-        --color-body: #c9cdd4;
-        --color-muted: #969ca7;
+        --color-paper: #0e0d0c;
+        --color-surface: #171614;
+        --color-soft: #201f1c;
+        --color-line: #312f2b;
+        --color-ink: #f4f2ec;
+        --color-body: #d0ccc2;
+        --color-muted: #9d998f;
 
-        --color-accent: var(--color-brand-400);
+        --color-accent: var(--color-zest-400);
         --color-accent-content: var(--color-brand-300);
         --color-accent-foreground: var(--color-navy-950);
     }
@@ -101,45 +101,46 @@
 }
 
 @layer components {
-    /* Small uppercase label above headings: a yellow ledger tab + mono text */
+    /* Small uppercase label above headings: a gold section sign + mono text */
     .eyebrow {
-        @apply inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[0.18em] text-brand-600 uppercase dark:text-brand-300;
+        @apply inline-flex items-center gap-2 font-mono text-[11px] font-semibold tracking-[0.18em] text-brand-700 uppercase dark:text-brand-300;
     }
 
     .eyebrow::before {
-        content: '';
-        @apply h-3 w-1.5 bg-zest-400;
+        content: '\00A7';
+        @apply font-display text-sm leading-none font-bold tracking-normal text-brand-500 dark:text-zest-400;
     }
 
-    /* Diagonal hazard stripes (yellow/graphite), used as thin rules */
-    .hazard {
-        background-image: repeating-linear-gradient(-45deg, var(--color-zest-400) 0 10px, var(--color-navy-950) 10px 20px);
+    /* Thin double rule in signal yellow, used under dark bands */
+    .rule-gold {
+        background-image: linear-gradient(to bottom, var(--color-zest-400) 0 2px, transparent 2px 4px, var(--color-zest-400) 4px 5px);
+        height: 5px;
     }
 
-    /* Primary button: square corners, solid cobalt */
+    /* Primary button: ink black with yellow text */
     .btn-primary {
-        @apply inline-flex items-center justify-center gap-2 rounded-sm bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:bg-brand-500 dark:hover:bg-brand-400;
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-navy-950 px-6 py-3 text-sm font-semibold text-zest-400 transition hover:bg-navy-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:bg-zest-400 dark:text-navy-950 dark:hover:bg-zest-300;
     }
 
     .btn-zest {
-        @apply inline-flex items-center justify-center gap-2 rounded-sm bg-zest-400 px-6 py-3 text-sm font-bold text-navy-950 shadow-[4px_4px_0_0_var(--color-navy-950)] transition hover:translate-x-px hover:translate-y-px hover:bg-zest-300 hover:shadow-[3px_3px_0_0_var(--color-navy-950)];
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-zest-400 px-6 py-3 text-sm font-bold text-navy-950 transition hover:bg-zest-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zest-400;
     }
 
     .btn-ghost {
-        @apply inline-flex items-center justify-center gap-2 rounded-sm border border-ink bg-transparent px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-paper;
+        @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/25 bg-transparent px-6 py-2.5 text-sm font-semibold text-ink transition hover:border-ink hover:bg-ink hover:text-paper;
     }
 
     /* Section tag chip on cards */
     .tag {
-        @apply inline-flex w-fit items-center gap-1.5 rounded-sm bg-zest-400 px-2 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase;
+        @apply inline-flex w-fit items-center gap-1.5 rounded-full bg-zest-400 px-2.5 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase;
     }
 
     .card {
-        @apply rounded-sm border border-line bg-surface;
+        @apply rounded-md border border-line bg-surface;
     }
 
     .link-underline {
-        @apply underline decoration-brand-500 decoration-2 underline-offset-4 transition hover:decoration-zest-400;
+        @apply underline decoration-zest-400 decoration-2 underline-offset-4 transition hover:decoration-brand-600;
     }
 }
 
@@ -154,11 +155,11 @@
     }
 
     .article-body h2 {
-        @apply mt-14 scroll-mt-36 border-t border-ink/15 pt-8 font-display text-3xl leading-tight font-extrabold tracking-tight text-ink;
+        @apply mt-14 scroll-mt-36 border-t border-ink/15 pt-8 font-display text-3xl leading-tight font-semibold tracking-tight text-ink;
     }
 
     .article-body h3 {
-        @apply mt-10 font-display text-2xl leading-snug font-bold text-ink;
+        @apply mt-10 font-display text-2xl leading-snug font-semibold text-ink;
     }
 
     .article-body h4 {
@@ -176,7 +177,7 @@
     }
 
     .article-body a:not(.btn-primary) {
-        @apply font-medium text-brand-700 underline decoration-brand-300 decoration-2 underline-offset-4 transition hover:decoration-brand-600 dark:text-brand-300 dark:decoration-brand-700 dark:hover:decoration-brand-400;
+        @apply font-medium text-ink underline decoration-zest-400 decoration-2 underline-offset-4 transition hover:decoration-brand-600 dark:decoration-brand-500 dark:hover:decoration-zest-400;
     }
 
     .article-body ul {
@@ -189,7 +190,7 @@
 
     .article-body ul > li::before {
         content: '';
-        @apply absolute top-[0.55em] left-1 h-2.5 w-1.5 bg-zest-400 ring-1 ring-navy-950/80;
+        @apply absolute top-[0.6em] left-1.5 size-2 rotate-45 bg-zest-400 ring-1 ring-navy-950/70;
     }
 
     .article-body ol {
@@ -204,7 +205,7 @@
 
     .article-body ol > li::before {
         content: counter(step);
-        @apply absolute top-0.5 left-0 flex size-7 items-center justify-center rounded-sm bg-navy-900 font-mono text-xs font-semibold text-zest-300 dark:bg-navy-700;
+        @apply absolute top-0.5 left-0 flex size-7 items-center justify-center rounded-full bg-navy-950 font-mono text-xs font-semibold text-zest-400 dark:bg-navy-700;
     }
 
     .article-body li > ul,
@@ -213,7 +214,7 @@
     }
 
     .article-body blockquote {
-        @apply border-l-4 border-brand-500 bg-brand-50 px-6 py-4 text-ink dark:bg-brand-950/40;
+        @apply border-l-4 border-zest-400 bg-brand-50 px-6 py-4 font-display text-lg text-ink italic dark:bg-brand-950/40;
     }
 
     .article-body hr {
@@ -221,7 +222,7 @@
     }
 
     .article-body .table-wrap {
-        @apply overflow-x-auto rounded-sm border border-line bg-surface;
+        @apply overflow-x-auto rounded-md border border-line bg-surface;
     }
 
     .article-body table {
@@ -229,7 +230,7 @@
     }
 
     .article-body th {
-        @apply bg-navy-900 px-3 py-3 text-sm font-semibold text-white sm:px-5 sm:py-3.5 dark:bg-navy-800;
+        @apply bg-navy-950 px-3 py-3 text-sm font-semibold text-white sm:px-5 sm:py-3.5 dark:bg-navy-800;
     }
 
     .article-body td {
@@ -245,7 +246,7 @@
     }
 
     .article-body .references {
-        @apply mt-16 rounded-sm border border-dashed border-line bg-surface p-7 text-sm leading-relaxed text-muted;
+        @apply mt-16 rounded-md border border-dashed border-line bg-surface p-7 text-sm leading-relaxed text-muted;
     }
 
     .article-body .references h2 {

@@ -27,29 +27,29 @@
 return [
 
     'sections' => [
-        'after-a-crash' => [
-            'title' => 'After a Crash',
+        'personal-injury' => [
+            'title' => 'Personal Injury & Accident Law',
             'order' => 1,
-            'icon' => 'exclamation-triangle',
-            'description' => 'What to do at the scene, police reports, determining fault, and the first days after a collision.',
-        ],
-        'insurance-claims' => [
-            'title' => 'Insurance Claims',
-            'order' => 2,
-            'icon' => 'shield-check',
-            'description' => 'Filing a claim, working with adjusters, coverage types, total losses, and disputed payouts.',
-        ],
-        'injury-legal-help' => [
-            'title' => 'Injury & Legal Help',
-            'order' => 3,
             'icon' => 'scale',
-            'description' => 'Injury claims, medical bills, settlements, deadlines, and when to talk to an attorney.',
+            'description' => 'Accident claims, liability and fault, insurance, medical records, settlements, and working with legal professionals.',
         ],
-        'repairs-replacement' => [
-            'title' => 'Repairs & Replacement',
+        'family-immigration' => [
+            'title' => 'Family & Immigration Law',
+            'order' => 2,
+            'icon' => 'users',
+            'description' => 'Divorce, custody and support, adoption, guardianship, visas, permanent residency, naturalization, and removal proceedings.',
+        ],
+        'criminal-employment' => [
+            'title' => 'Criminal & Employment Law',
+            'order' => 3,
+            'icon' => 'briefcase',
+            'description' => 'Criminal procedure and defense, DUI stops, record sealing, workplace rights, discrimination, wages, and workers\' compensation.',
+        ],
+        'business-property' => [
+            'title' => 'Business, Property & Financial Law',
             'order' => 4,
-            'icon' => 'wrench-screwdriver',
-            'description' => 'Body shops, rental cars, diminished value, and financing a replacement vehicle.',
+            'icon' => 'building-office-2',
+            'description' => 'Corporate governance, contracts, tax and compliance, real estate transactions, foreclosure, estate planning, and trusts.',
         ],
     ],
 
@@ -59,6 +59,24 @@ return [
             'role' => 'Business, Property & Financial Compliance',
             'bio' => 'Bedig Sarkissian is a legal researcher and financial compliance writer specializing in corporate governance, commercial transactions, and real property regulations.',
             'bio_long' => 'Bedig Sarkissian is a legal researcher and financial compliance writer specializing in corporate governance, commercial transactions, and real property regulations. With a strong background in analyzing complex regulatory updates and commercial frameworks, Bedig focuses on translating intricate financial codes, contract laws, and property statutes into accessible, practical guidance for entrepreneurs, small business owners, and investors.',
+        ],
+        'laura-bennett' => [
+            'name' => 'Laura Bennett',
+            'role' => 'Public Policy & Family Law',
+            'bio' => 'Laura Bennett specializes in public policy, cross-border legal frameworks, and domestic relations law.',
+            'bio_long' => 'Laura Bennett specializes in public policy, cross-border legal frameworks, and domestic relations law. With extensive experience in legal journalism, Laura is dedicated to providing clear, structured, and reliable information to individuals and families navigating complex legal transitions.',
+        ],
+        'daniel-foster' => [
+            'name' => 'Daniel Foster',
+            'role' => 'Civil Litigation & Workplace Rights',
+            'bio' => 'Daniel Foster is a legal writer and consumer advocacy specialist with a deep focus on civil litigation, tort law, and workplace rights.',
+            'bio_long' => 'Daniel Foster is a legal writer and consumer advocacy specialist with a deep focus on civil litigation, tort law, and workplace rights. Over his career, Daniel has broken down complex legal statutes, workers\' compensation frameworks, and defendant rights into transparent, actionable resources. His work helps everyday readers understand their legal rights and options following motor vehicle accidents, workplace disputes, and consumer injury claims.',
+        ],
+        'marcus-thompson' => [
+            'name' => 'Marcus Thompson',
+            'role' => 'Criminal Procedure & Employment Law',
+            'bio' => 'Marcus Thompson is a legal researcher specializing in criminal procedure, employment law, workplace rights, and employment disputes.',
+            'bio_long' => 'Marcus Thompson is a legal researcher specializing in criminal procedure, employment law, workplace rights, and employment disputes. His work focuses on explaining legal processes, criminal justice developments, and the practical consequences of laws affecting individuals and communities.',
         ],
         'mateo-alvarez' => [
             'name' => 'Mateo Alvarez',
@@ -78,20 +96,27 @@ return [
             'bio' => 'Camila Ferreira is an insurance risk analyst and consumer educator specializing in policy underwriting, coverage exclusions, and claim appeals.',
             'bio_long' => 'Camila Ferreira brings a sharp analytical background in risk assessment and policy underwriting to consumer advocacy. Having evaluated countless commercial and personal policy structures, Camila understands the exact clauses that dictate claim approvals and denials. She writes practical guides designed to help policyholders understand their coverage limits, spot bad-faith practices, and navigate insurance negotiations with confidence. Outside of work, Camila is passionate about acoustic guitar and landscape painting.',
         ],
-        'laura-bennett' => [
-            'name' => 'Laura Bennett',
-            'role' => 'Public Policy & Family Law',
-            'bio' => 'Laura Bennett specializes in public policy, cross-border legal frameworks, and domestic relations law.',
-            'bio_long' => 'Laura Bennett specializes in public policy, cross-border legal frameworks, and domestic relations law. With extensive experience in legal journalism, Laura is dedicated to providing clear, structured, and reliable information to individuals and families navigating complex legal transitions.',
-        ],
-        'daniel-foster' => [
-            'name' => 'Daniel Foster',
-            'role' => 'Civil Litigation & Workplace Rights',
-            'bio' => 'Daniel Foster is a legal writer and consumer advocacy specialist with a deep focus on civil litigation, tort law, and workplace rights.',
-            'bio_long' => 'Daniel Foster is a legal writer and consumer advocacy specialist with a deep focus on civil litigation, tort law, and workplace rights. Over his career, Daniel has broken down complex legal statutes, workers\' compensation frameworks, and defendant rights into transparent, actionable resources. His work helps everyday readers understand their legal rights and options following motor vehicle accidents, workplace disputes, and consumer injury claims.',
-        ],
     ],
 
-    'programs' => [],
+    'programs' => [
+        [
+            'slug' => '18-wheeler-accident-lawyers-the-full-guide-to-truck-accident-legal-representation',
+            'section' => 'personal-injury',
+            'date' => '2026-09-30',
+            'cta_label' => 'See More Details',
+            'cta_url' => 'https://website1-pink-delta.vercel.app/',
+            'hero_icon' => 'truck',
+            'related_slug' => '18-wheeler-regulations-understanding-federal-safety-standards-and-commercial-claims',
+        ],
+        [
+            'slug' => 'oilfield-injury-attorneys-the-full-guide-to-oilfield-and-offshore-accident-legal-representation',
+            'section' => 'personal-injury',
+            'date' => '2026-09-29',
+            'cta_label' => 'See More Details',
+            'cta_url' => 'https://website1-pink-delta.vercel.app/',
+            'hero_icon' => 'wrench-screwdriver',
+            'related_slug' => 'workplace-incidents-occupational-safety-regulations-and-injury-protocols',
+        ],
+    ],
 
 ];

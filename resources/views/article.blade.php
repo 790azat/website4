@@ -38,12 +38,12 @@
                 <a href="{{ route('section', $article['section']) }}" wire:navigate class="font-semibold hover:text-white">{{ $article['section_title'] }}</a>
             </nav>
 
-            <a href="{{ route('section', $article['section']) }}" wire:navigate class="mt-10 inline-flex items-center gap-2 rounded-sm bg-zest-400 px-2.5 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase">
+            <a href="{{ route('section', $article['section']) }}" wire:navigate class="mt-10 inline-flex items-center gap-2 rounded-md bg-zest-400 px-2.5 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase">
                 <flux:icon name="{{ $article['section_icon'] }}" variant="micro" class="size-3.5" />
                 {{ $article['section_title'] }}
             </a>
 
-            <h1 class="mt-5 max-w-4xl font-display text-4xl leading-[1.02] font-black tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 class="mt-5 max-w-4xl font-display text-4xl leading-[1.02] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
                 {{ $article['title'] }}
             </h1>
 
@@ -70,13 +70,13 @@
     <article class="mx-auto max-w-6xl px-6 lg:px-8">
         {{-- Hero image, pulled up over the navy header --}}
         @if ($article['image'])
-            <div class="relative -mt-28 overflow-hidden rounded-sm shadow-[10px_10px_0_0_var(--color-zest-400)] lg:-mt-40">
+            <div class="relative -mt-28 overflow-hidden rounded-md shadow-[10px_10px_0_0_var(--color-zest-400)] lg:-mt-40">
                 <img src="{{ asset('images/'.$article['image']) }}" alt="{{ $article['title'] }}" class="aspect-[21/9] w-full object-cover" />
             </div>
         @endif
 
         @if ($article['locale'] !== app()->getLocale())
-            <p class="mt-10 flex items-start gap-3 rounded-sm border-l-4 border-zest-400 bg-zest-200/40 p-5 text-sm leading-relaxed text-body dark:bg-zest-400/10">
+            <p class="mt-10 flex items-start gap-3 rounded-md border-l-4 border-zest-400 bg-zest-200/40 p-5 text-sm leading-relaxed text-body dark:bg-zest-400/10">
                 <flux:icon name="language" variant="mini" class="mt-0.5 size-5 shrink-0 text-brand-600 dark:text-brand-400" />
                 {{ __('This article is currently available in English only.') }}
             </p>
@@ -86,7 +86,7 @@
             {{-- Table of contents --}}
             @if (count($rendered['toc']) > 1)
                 <aside class="lg:col-span-4">
-                    <nav class="rounded-sm border border-line bg-surface p-5 lg:sticky lg:top-36" aria-label="{{ __('In this article') }}" x-data="{ open: false }">
+                    <nav class="rounded-md border border-line bg-surface p-5 lg:sticky lg:top-36" aria-label="{{ __('In this article') }}" x-data="{ open: false }">
                         <button type="button" class="flex w-full items-center justify-between text-left lg:pointer-events-none" @click="open = ! open">
                             <span class="eyebrow">{{ __('In this article') }}</span>
                             <flux:icon name="chevron-down" variant="mini" class="size-4 text-muted transition lg:hidden" ::class="open && 'rotate-180'" />
@@ -106,7 +106,7 @@
                 @include('partials.article-body', ['html' => $rendered['html']])
 
                 {{-- Author card --}}
-                <div class="mt-16 overflow-hidden rounded-sm border border-line bg-surface">
+                <div class="mt-16 overflow-hidden rounded-md border border-line bg-surface">
                     <div class="flex items-center gap-4 border-t-4 border-zest-400 bg-navy-950 p-6 sm:px-8">
                         @include('partials.avatar', ['author' => $author, 'class' => 'size-16 text-lg !ring-navy-700'])
                         <div>
@@ -123,11 +123,11 @@
                     </div>
                 </div>
 
-                <p class="mt-8 flex gap-3 rounded-sm bg-soft p-5 text-sm leading-relaxed text-muted">
+                <p class="mt-8 flex gap-3 rounded-md bg-soft p-5 text-sm leading-relaxed text-muted">
                     <flux:icon name="information-circle" variant="mini" class="size-5 shrink-0 text-brand-500" />
                     <span>
                         <span class="font-bold text-body">{{ __('Educational content only.') }}</span>
-                        {{ __('This article is for general information and is not personalized legal, medical, insurance, or financial advice.') }}
+                        {{ __('This article is for general information and is not personalized legal, financial, or professional advice.') }}
                     </span>
                 </p>
             </div>
@@ -141,7 +141,7 @@
                 <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                     <div>
                         <span class="eyebrow">{{ __('Keep learning') }}</span>
-                        <h2 class="mt-3 font-display text-3xl font-extrabold text-ink">{{ __('More in :section', ['section' => $article['section_title']]) }}</h2>
+                        <h2 class="mt-3 font-display text-3xl font-semibold text-ink">{{ __('More in :section', ['section' => $article['section_title']]) }}</h2>
                     </div>
                     <a href="{{ route('section', $article['section']) }}" wire:navigate class="link-underline text-sm font-semibold text-ink">{{ __('See all') }}</a>
                 </div>

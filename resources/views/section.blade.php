@@ -70,8 +70,8 @@
             <h2 class="font-display text-3xl font-bold text-ink">{{ __('Keep exploring') }}</h2>
             <div class="mt-8 grid gap-4 sm:grid-cols-3">
                 @foreach ($otherCategories as $category)
-                    <a href="{{ route('section', $category['id']) }}" wire:navigate class="group flex items-center gap-4 rounded-sm border-2 border-line bg-paper p-5 transition hover:border-ink">
-                        <span class="flex size-12 shrink-0 items-center justify-center rounded-sm bg-navy-950 text-zest-400 transition group-hover:bg-brand-500 group-hover:text-white">
+                    <a href="{{ route('section', $category['id']) }}" wire:navigate class="group flex items-center gap-4 rounded-md border-2 border-line bg-paper p-5 transition hover:border-ink">
+                        <span class="flex size-12 shrink-0 items-center justify-center rounded-md bg-navy-950 text-zest-400 transition group-hover:bg-brand-500 group-hover:text-white">
                             <flux:icon name="{{ $category['icon'] }}" class="size-6" />
                         </span>
                         <span class="min-w-0 flex-1">

@@ -12,11 +12,12 @@ export default defineConfig({
             ],
             refresh: true,
             fonts: [
-                bunny('IBM Plex Sans', {
+                bunny('Public Sans', {
                     weights: [400, 500, 600, 700],
                 }),
-                bunny('Archivo', {
-                    weights: [600, 700, 800, 900],
+                bunny('Fraunces', {
+                    weights: [500, 600, 700],
+                    styles: ['normal', 'italic'],
                 }),
                 bunny('IBM Plex Mono', {
                     weights: [500, 600],

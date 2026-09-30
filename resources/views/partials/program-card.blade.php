@@ -7,7 +7,7 @@
         @if ($program['hero_image'])
             <img src="{{ asset('images/'.$program['hero_image']) }}" alt="{{ $program['title'] }}" loading="lazy" decoding="async" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" />
         @endif
-        <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-sm bg-zest-400 px-2 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase">
+        <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-md bg-zest-400 px-2 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase">
             <flux:icon name="star" variant="micro" class="size-3" />
             {{ __('Main guide') }}
         </span>

@@ -46,7 +46,7 @@
         ],
         [
             'heading' => __('Children\'s Privacy'),
-            'body' => __(':site is intended for adult drivers and their families and is not directed at children. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can remove it.', ['site' => $siteName]),
+            'body' => __(':site is intended for adult readers and is not directed at children. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can remove it.', ['site' => $siteName]),
         ],
         [
             'heading' => __('Changes to This Policy'),
@@ -59,6 +59,6 @@
     @include('partials.legal-page', [
         'heading' => __('Privacy Policy'),
         'docName' => __('this Privacy Policy or how we handle your information'),
-        'closingNote' => __(':site publishes educational and informational content only and is not a substitute for personalized legal, medical, insurance, or financial advice. This policy describes our data practices and is not itself legal advice.', ['site' => $siteName]),
+        'closingNote' => __(':site publishes educational and informational content only and is not a substitute for personalized legal, financial, or professional advice. This policy describes our data practices and is not itself legal advice.', ['site' => $siteName]),
     ])
 @endsection

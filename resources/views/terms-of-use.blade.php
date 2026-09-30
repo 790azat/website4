@@ -14,7 +14,7 @@
         ],
         [
             'heading' => __('Educational Use Only'),
-            'body' => __(':site publishes content for general informational and educational purposes only. Nothing on this site constitutes personalized legal, medical, insurance, or financial advice, and it should not be relied upon as such. You should consult a qualified professional before making decisions based on information found here.', ['site' => $siteName]),
+            'body' => __(':site publishes content for general informational and educational purposes only. Nothing on this site constitutes personalized legal, financial, or professional advice, and it should not be relied upon as such. You should consult a qualified professional before making decisions based on information found here.', ['site' => $siteName]),
         ],
         [
             'heading' => __('Use of the Site'),
@@ -53,6 +53,6 @@
     @include('partials.legal-page', [
         'heading' => __('Terms of Use'),
         'docName' => __('these Terms of Use'),
-        'closingNote' => __(':site publishes educational and informational content only and is not a substitute for personalized legal, medical, insurance, or financial advice. These Terms describe the rules for using our site and are not themselves legal advice.', ['site' => $siteName]),
+        'closingNote' => __(':site publishes educational and informational content only and is not a substitute for personalized legal, financial, or professional advice. These Terms describe the rules for using our site and are not themselves legal advice.', ['site' => $siteName]),
     ])
 @endsection

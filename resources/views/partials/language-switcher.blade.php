@@ -22,7 +22,7 @@
             aria-label="{{ $label }}"
             @if ($currentLocale === $code) aria-current="true" @endif
             @class([
-                'flex items-center justify-center rounded-sm p-1.5 transition',
+                'flex items-center justify-center rounded-md p-1.5 transition',
                 'bg-navy-700 ring-1 ring-zest-400/60' => $currentLocale === $code,
                 'opacity-60 hover:bg-navy-800 hover:opacity-100' => $currentLocale !== $code,
             ])

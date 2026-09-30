@@ -4,18 +4,18 @@
     $siteName = config('app.name', 'Laravel');
     $siteDomain = config('app.display_domain');
     $title = __('Disclaimer');
-    $description = __('Read the :site disclaimer: our content is educational only and is not legal, medical, insurance, or financial advice.', ['site' => $siteName]);
+    $description = __('Read the :site disclaimer: our content is educational only and is not legal, financial, or professional advice.', ['site' => $siteName]);
 
     $lastUpdated = \Carbon\Carbon::parse('2026-09-28');
 
     $sections = [
         [
             'heading' => __('Educational Purposes Only'),
-            'body' => __('The content provided on :domain is for informational and educational purposes only and should not be construed as legal, medical, insurance, or financial advice. :domain is not a law firm, insurance company, or medical provider, and our articles do not replace advice from a licensed professional who can review your specific situation.', ['domain' => $siteDomain]),
+            'body' => __('The content provided on :domain is for informational and educational purposes only and should not be construed as legal, financial, or professional advice. :domain is not a law firm, and reading our articles does not create an attorney-client relationship or replace advice from a licensed professional who can review your specific situation.', ['domain' => $siteDomain]),
         ],
         [
             'heading' => __('Policies, Deadlines, and Laws Vary'),
-            'body' => __('Insurance policies, claim deadlines, fault rules, and injury laws vary by insurer and by state. Before making any claim, legal, medical, or financial decision, conduct your own research and consult a qualified, licensed professional who understands your specific situation.'),
+            'body' => __('Laws, filing deadlines, and procedures vary by jurisdiction and change over time. Before making any legal, financial, or personal decision, conduct your own research and consult a qualified, licensed professional who understands your specific situation.'),
         ],
         [
             'heading' => __('No Warranties or Liability'),

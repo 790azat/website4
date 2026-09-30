@@ -4,8 +4,7 @@
     and x-data="{ mobileOpen: false }" on <body>.
 --}}
 <header class="sticky top-0 z-40">
-    <div class="hazard h-1"></div>
-    <div class="bg-navy-950 text-white">
+        <div class="bg-navy-950 text-white">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-6 lg:px-8">
             <a href="{{ route('home') }}" wire:navigate class="shrink-0" aria-label="{{ __(':site home', ['site' => config('app.name')]) }}">
                 @include('partials.logo', ['invert' => true])
@@ -23,7 +22,7 @@
                     @include('partials.language-switcher')
                 </div>
 
-                <a href="{{ route('articles') }}" wire:navigate class="hidden items-center gap-2 rounded-sm bg-zest-400 px-4 py-2 text-sm font-bold text-navy-950 transition hover:bg-zest-300 sm:inline-flex">
+                <a href="{{ route('articles') }}" wire:navigate class="hidden items-center gap-2 rounded-md bg-zest-400 px-4 py-2 text-sm font-bold text-navy-950 transition hover:bg-zest-300 sm:inline-flex">
                     <flux:icon name="book-open" variant="mini" class="size-4" />
                     {{ __('All Articles') }}
                 </a>
@@ -31,7 +30,7 @@
                 <button
                     type="button"
                     @click="mobileOpen = true"
-                    class="flex size-10 items-center justify-center rounded-sm border border-navy-700 text-white transition hover:border-zest-400 lg:hidden"
+                    class="flex size-10 items-center justify-center rounded-md border border-navy-700 text-white transition hover:border-zest-400 lg:hidden"
                     aria-label="{{ __('Open menu') }}"
                 >
                     <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -85,7 +84,7 @@
             <a href="{{ route('home') }}" wire:navigate @click="mobileOpen = false">
                 @include('partials.logo', ['size' => 'sm', 'invert' => true])
             </a>
-            <button type="button" @click="mobileOpen = false" class="flex size-10 items-center justify-center rounded-sm border border-navy-700 text-white" aria-label="{{ __('Close menu') }}">
+            <button type="button" @click="mobileOpen = false" class="flex size-10 items-center justify-center rounded-md border border-navy-700 text-white" aria-label="{{ __('Close menu') }}">
                 <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
                 </svg>
@@ -93,13 +92,13 @@
         </div>
 
         <nav class="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-6">
-            <a href="{{ route('home') }}" wire:navigate @click="mobileOpen = false" class="rounded-sm px-4 py-3 font-bold text-ink hover:bg-soft">{{ __('Home') }}</a>
-            <a href="{{ route('articles') }}" wire:navigate @click="mobileOpen = false" class="rounded-sm px-4 py-3 font-bold text-ink hover:bg-soft">{{ __('All Articles') }}</a>
+            <a href="{{ route('home') }}" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-bold text-ink hover:bg-soft">{{ __('Home') }}</a>
+            <a href="{{ route('articles') }}" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-bold text-ink hover:bg-soft">{{ __('All Articles') }}</a>
 
             <p class="eyebrow mt-5 mb-2 px-4">{{ __('Topics') }}</p>
             @foreach ($categories as $category)
-                <a href="{{ route('section', $category['id']) }}" wire:navigate @click="mobileOpen = false" class="flex items-center gap-3 rounded-sm px-4 py-3 font-semibold text-body hover:bg-soft">
-                    <span class="flex size-8 items-center justify-center rounded-sm bg-navy-950 text-zest-400">
+                <a href="{{ route('section', $category['id']) }}" wire:navigate @click="mobileOpen = false" class="flex items-center gap-3 rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">
+                    <span class="flex size-8 items-center justify-center rounded-md bg-navy-950 text-zest-400">
                         <flux:icon name="{{ $category['icon'] }}" variant="mini" class="size-4" />
                     </span>
                     {{ $category['title'] }}
@@ -107,11 +106,11 @@
             @endforeach
 
             <p class="eyebrow mt-5 mb-2 px-4">{{ __('About') }}</p>
-            <a href="{{ route('team') }}" wire:navigate @click="mobileOpen = false" class="rounded-sm px-4 py-3 font-semibold text-body hover:bg-soft">{{ __('Our Team') }}</a>
-            <a href="{{ route('contact') }}" wire:navigate @click="mobileOpen = false" class="rounded-sm px-4 py-3 font-semibold text-body hover:bg-soft">{{ __('Contact') }}</a>
+            <a href="{{ route('team') }}" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">{{ __('Our Team') }}</a>
+            <a href="{{ route('contact') }}" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">{{ __('Contact') }}</a>
 
             <div class="mt-6 px-4">
-                <div class="inline-flex rounded-sm bg-navy-950 p-1.5">
+                <div class="inline-flex rounded-md bg-navy-950 p-1.5">
                     @include('partials.language-switcher')
                 </div>
             </div>

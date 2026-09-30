@@ -50,11 +50,11 @@
 
     <section class="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div class="flex flex-wrap gap-2.5">
-            <a href="{{ route('articles') }}" wire:navigate class="rounded-sm border-2 px-5 py-2.5 text-sm font-bold transition {{ $chip(! $selectedSection) }}">
+            <a href="{{ route('articles') }}" wire:navigate class="rounded-md border-2 px-5 py-2.5 text-sm font-bold transition {{ $chip(! $selectedSection) }}">
                 {{ __('All topics') }}
             </a>
             @foreach ($categories as $category)
-                <a href="{{ route('articles.topic', $category['id']) }}" wire:navigate class="inline-flex items-center gap-2 rounded-sm border-2 px-5 py-2.5 text-sm font-bold transition {{ $chip($selectedSection === $category['id']) }}">
+                <a href="{{ route('articles.topic', $category['id']) }}" wire:navigate class="inline-flex items-center gap-2 rounded-md border-2 px-5 py-2.5 text-sm font-bold transition {{ $chip($selectedSection === $category['id']) }}">
                     <flux:icon name="{{ $category['icon'] }}" variant="mini" class="size-4" />
                     {{ $category['title'] }}
                 </a>

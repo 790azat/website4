@@ -13,13 +13,13 @@ return [
     |
     */
 
-    'name' => 'CrashLedger',
+    'name' => 'Casebook',
 
     // Public domain used for contact email addresses (hello@, editorial@).
-    'domain' => 'crashledger.com',
+    'domain' => 'casebook.example',
 
     // How the domain is written in running text (disclaimers).
-    'display_domain' => 'CrashLedger.com',
+    'display_domain' => 'Casebook',
 
     /*
     |--------------------------------------------------------------------------

@@ -7,7 +7,7 @@
             ->when($page - 2 > 1, fn ($c) => $c->prepend('…')->prepend(1))
             ->when($page + 2 < $lastPage, fn ($c) => $c->push('…')->push($lastPage))
             ->values();
-        $base = 'flex h-11 min-w-11 items-center justify-center rounded-sm px-4 text-sm font-bold transition';
+        $base = 'flex h-11 min-w-11 items-center justify-center rounded-md px-4 text-sm font-bold transition';
         $idle = 'border border-line bg-surface text-body hover:border-ink hover:text-ink';
     @endphp
     <nav class="mt-14 flex flex-wrap items-center justify-center gap-2" aria-label="{{ __('Page navigation') }}">
