@@ -10,17 +10,21 @@ use Illuminate\Http\Request;
  *
  * English pages live at the site root ("/our-team"), translations under a
  * language prefix ("/es/our-team", "/fr/our-team"). Canonical, hreflang and
- * sitemap URLs always use the public domain (config app.domain), so previews
- * and staging hosts never compete with the real site in search results.
+ * sitemap URLs use the public domain (config app.domain) when it is set, so
+ * previews and staging hosts never compete with the real site in search
+ * results.
  */
 class Seo
 {
     /**
-     * Public origin of the site, e.g. "https://crashledger.com".
+     * Public origin of the site, e.g. "https://crashledger.com", or the
+     * current host when no public domain is configured.
      */
     public static function origin(): string
     {
-        return 'https://'.config('app.domain');
+        $domain = config('app.domain');
+
+        return filled($domain) ? 'https://'.$domain : request()->root();
     }
 
     /**
