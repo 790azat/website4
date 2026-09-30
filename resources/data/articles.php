@@ -56,9 +56,9 @@ return [
     'authors' => [
         'bedig-sarkissian' => [
             'name' => 'Bedig Sarkissian',
-            'role' => 'Legal Research & Consumer Rights',
-            'bio' => 'Bedig Sarkissian is a legal researcher and consumer advocate focusing on cross-border legal frameworks, documentation standards, and public rights education.',
-            'bio_long' => 'Bedig Sarkissian has spent years navigating complex legal statutes, regulatory compliance, and documentation standards. Drawing on a strong background in analytical research and public advocacy, Bedig is dedicated to making dense legal procedures clear and accessible for everyday consumers. His guides focus on helping people understand their statutory rights, navigate administrative hurdles, and protect themselves during complex disputes. Outside of his research work, Bedig enjoys typography and exploring traditional architecture.',
+            'role' => 'Business, Property & Financial Compliance',
+            'bio' => 'Bedig Sarkissian is a legal researcher and financial compliance writer specializing in corporate governance, commercial transactions, and real property regulations.',
+            'bio_long' => 'Bedig Sarkissian is a legal researcher and financial compliance writer specializing in corporate governance, commercial transactions, and real property regulations. With a strong background in analyzing complex regulatory updates and commercial frameworks, Bedig focuses on translating intricate financial codes, contract laws, and property statutes into accessible, practical guidance for entrepreneurs, small business owners, and investors.',
         ],
         'mateo-alvarez' => [
             'name' => 'Mateo Alvarez',
@@ -77,6 +77,18 @@ return [
             'role' => 'Insurance Policy & Consumer Education',
             'bio' => 'Camila Ferreira is an insurance risk analyst and consumer educator specializing in policy underwriting, coverage exclusions, and claim appeals.',
             'bio_long' => 'Camila Ferreira brings a sharp analytical background in risk assessment and policy underwriting to consumer advocacy. Having evaluated countless commercial and personal policy structures, Camila understands the exact clauses that dictate claim approvals and denials. She writes practical guides designed to help policyholders understand their coverage limits, spot bad-faith practices, and navigate insurance negotiations with confidence. Outside of work, Camila is passionate about acoustic guitar and landscape painting.',
+        ],
+        'laura-bennett' => [
+            'name' => 'Laura Bennett',
+            'role' => 'Public Policy & Family Law',
+            'bio' => 'Laura Bennett specializes in public policy, cross-border legal frameworks, and domestic relations law.',
+            'bio_long' => 'Laura Bennett specializes in public policy, cross-border legal frameworks, and domestic relations law. With extensive experience in legal journalism, Laura is dedicated to providing clear, structured, and reliable information to individuals and families navigating complex legal transitions.',
+        ],
+        'daniel-foster' => [
+            'name' => 'Daniel Foster',
+            'role' => 'Civil Litigation & Workplace Rights',
+            'bio' => 'Daniel Foster is a legal writer and consumer advocacy specialist with a deep focus on civil litigation, tort law, and workplace rights.',
+            'bio_long' => 'Daniel Foster is a legal writer and consumer advocacy specialist with a deep focus on civil litigation, tort law, and workplace rights. Over his career, Daniel has broken down complex legal statutes, workers\' compensation frameworks, and defendant rights into transparent, actionable resources. His work helps everyday readers understand their legal rights and options following motor vehicle accidents, workplace disputes, and consumer injury claims.',
         ],
     ],
 

@@ -8,6 +8,7 @@ Route::view('author/{slug}', 'author')->name('author');
 Route::view('contact', 'contact')->name('contact');
 Route::view('privacy-policy', 'privacy-policy')->name('privacy-policy');
 Route::view('terms-of-use', 'terms-of-use')->name('terms-of-use');
+Route::view('captcha', 'captcha')->name('captcha');
 Route::view('disclaimer', 'disclaimer')->name('disclaimer');
 
 // Pagination and topic filters use path segments (not query strings) so the

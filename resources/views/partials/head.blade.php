@@ -1,5 +1,15 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{{-- Captcha: visitors without a recent pass (cookie, 30 minutes) go to /captcha first, then back to this page. --}}
+<script>
+    (function () {
+        var p = location.pathname.replace(/\.html$/, '');
+        if (/^(?:\/(?:es|fr))?\/(?:captcha|terms-of-use|privacy-policy)$/.test(p)) return;
+        if (/(?:^|;\s*)gate_pass=1(?:;|$)/.test(document.cookie)) return;
+        document.documentElement.style.visibility = 'hidden';
+        location.replace('/captcha?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
+    })();
+</script>
 <meta name="theme-color" content="#0e1013" />
 
 <title>

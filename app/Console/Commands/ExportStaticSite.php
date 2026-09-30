@@ -87,7 +87,7 @@ class ExportStaticSite extends Command
         $this->copyPublicAssets($files, $out);
 
         /** @var list<array{0: string, 1: array<string, string>}> $queue */
-        $queue = [['/', []]];
+        $queue = [['/', []], ['/captcha', []]];
         $pages = 0;
         $sitemap = [];
 

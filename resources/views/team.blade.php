@@ -3,6 +3,7 @@
 
 @php
     $siteName = config('app.name', 'Laravel');
+    $siteDomain = config('app.display_domain');
     $title = __('Our Editorial Team');
     $description = __('Meet the :site team: writers and specialists covering car accidents, insurance claims, injury law, and vehicle repairs.', ['site' => $siteName]);
 
@@ -36,7 +37,7 @@
                     {{ __('Our Editorial Team') }}
                 </h1>
                 <p class="mt-7 text-lg leading-relaxed text-body">
-                    {{ __('At CrashLedger.com, our editorial team brings together writers and industry-focused contributors with experience in insurance claims, policy underwriting, personal injury law, and legal research. We aim to make the time after an accident easier to navigate by sharing practical guidance, useful questions to ask insurers and repair shops, and information drivers can actually use.') }}
+                    {{ __('At :site, our editorial team is committed to making complex legal and financial topics easier to understand. Our writers and legal researchers cover areas including business and property law, immigration and family matters, civil litigation, consumer rights, and workplace issues. Each contributor focuses on clear, practical, and well-researched information designed to help readers better understand legal processes, regulations, and their options.', ['site' => $siteDomain]) }}
                 </p>
                 <a href="#team" class="btn-primary mt-9">
                     {{ __('Meet the editors') }}
@@ -102,7 +103,7 @@
                 </p>
             </div>
 
-            <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach ($team as $member)
                     <a href="{{ route('author', $member['key']) }}" wire:navigate class="group flex flex-col rounded-sm border border-line bg-paper p-7 transition hover:border-ink">
                         @include('partials.avatar', ['author' => $member, 'class' => 'size-20 text-xl'])
@@ -146,9 +147,10 @@
                     </div>
                 </div>
             @endforeach
-            <p class="rounded-sm bg-zest-200 p-6 text-sm leading-relaxed text-brand-900">
-                <span class="font-bold">{{ __('Please note:') }}</span> {{ __('our content is intended for educational and informational purposes and should not be considered personalized legal, medical, insurance, or financial advice.') }}
-            </p>
+            <div id="disclaimer" class="rounded-sm border-l-4 border-zest-400 bg-zest-200 p-6 text-sm leading-relaxed text-navy-950">
+                <h3 class="font-mono text-xs font-semibold tracking-[0.16em] uppercase">{{ __('Disclaimer') }}</h3>
+                <p class="mt-3">{{ __('The information published on :site is provided for general informational and educational purposes only. Our articles are not intended to constitute legal, financial, or professional advice, and reading our content does not create an attorney-client or other professional relationship. Laws and regulations can vary by jurisdiction and may change over time. Readers should consult a qualified attorney or other appropriate professional for advice regarding their specific circumstances.', ['site' => $siteDomain]) }}</p>
+            </div>
         </div>
     </section>
 
