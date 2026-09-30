@@ -43,7 +43,7 @@
                     '@type' => 'Person',
                     'name' => $author['name'],
                     'jobTitle' => $author['role'] ?? null,
-                    'url' => isset(SiteContent::data()['authors'][$author['key']])
+                    'url' => \Illuminate\Support\Facades\Route::has('author') && isset(SiteContent::data()['authors'][$author['key'] ?? ''])
                         ? \App\Support\Seo::url(route('author', $author['key'], false), $article['locale'])
                         : null,
                 ]),
