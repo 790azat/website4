@@ -17,20 +17,61 @@
         @endif
         @php
             $shareImage = ! empty($shareArticle['image'] ?? null) ? 'images/'.$shareArticle['image'] : 'images/brand/logo.webp';
+
+            $pageLocales = $pageLocales ?? null;
+            $canonicalUrl = \App\Support\Seo::canonical($pageLocales);
+            $alternateUrls = \App\Support\Seo::alternates($pageLocales);
+            $currentLocale = app()->getLocale();
+            // Search results are not indexed; everything else is.
+            $robots = $robots ?? (request()->filled('q') ? 'noindex, follow' : 'index, follow, max-image-preview:large');
         @endphp
+        <meta name="robots" content="{{ $robots }}" />
+        <link rel="canonical" href="{{ $canonicalUrl }}" />
+        @foreach ($alternateUrls as $code => $href)
+            <link rel="alternate" hreflang="{{ $code }}" href="{{ $href }}" />
+        @endforeach
         <meta property="og:site_name" content="{{ $siteName }}" />
         <meta property="og:type" content="{{ isset($shareArticle) ? 'article' : 'website' }}" />
         <meta property="og:title" content="{{ $title ?? $siteName }}" />
         @if (filled($description ?? null))
             <meta property="og:description" content="{{ $description }}" />
         @endif
-        <meta property="og:image" content="https://{{ config('app.domain') }}/{{ $shareImage }}" />
-        <meta property="og:locale" content="{{ ['en' => 'en_US', 'es' => 'es_ES', 'fr' => 'fr_FR'][app()->getLocale()] ?? 'en_US' }}" />
-        <meta name="twitter:card" content="summary_large_image" />
-        @foreach (\App\Http\Middleware\SetLocale::SUPPORTED as $code)
-            <link rel="alternate" hreflang="{{ $code }}" href="{{ $code === 'en' ? url()->current() : url()->current().'?lang='.$code }}" />
+        <meta property="og:url" content="{{ $canonicalUrl }}" />
+        <meta property="og:image" content="{{ \App\Support\Seo::origin() }}/{{ $shareImage }}" />
+        <meta property="og:locale" content="{{ \App\Support\Seo::ogLocale($currentLocale) }}" />
+        @foreach (array_keys($alternateUrls) as $code)
+            @if ($code !== 'x-default' && $code !== $currentLocale)
+                <meta property="og:locale:alternate" content="{{ \App\Support\Seo::ogLocale($code) }}" />
+            @endif
         @endforeach
-        <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ $title ?? $siteName }}" />
+        @if (filled($description ?? null))
+            <meta name="twitter:description" content="{{ $description }}" />
+        @endif
+        @php
+            $siteSchema = \App\Support\Seo::jsonLd([
+                '@graph' => [
+                    [
+                        '@type' => 'Organization',
+                        '@id' => \App\Support\Seo::origin().'/#organization',
+                        'name' => $siteName,
+                        'url' => \App\Support\Seo::origin().'/',
+                        'logo' => \App\Support\Seo::origin().'/images/brand/logo.webp',
+                    ],
+                    [
+                        '@type' => 'WebSite',
+                        '@id' => \App\Support\Seo::origin().'/#website',
+                        'name' => $siteName,
+                        'url' => \App\Support\Seo::origin().'/',
+                        'inLanguage' => $currentLocale,
+                        'publisher' => ['@id' => \App\Support\Seo::origin().'/#organization'],
+                    ],
+                ],
+            ]);
+        @endphp
+        <script type="application/ld+json">{!! $siteSchema !!}</script>
+        @stack('head')
     </head>
     <body
         x-data="{ mobileOpen: false }"

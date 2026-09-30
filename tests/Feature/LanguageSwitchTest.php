@@ -14,19 +14,28 @@ test('the site is in English by default', function () {
         ->assertSee('All Articles');
 });
 
-test('a lang parameter switches the interface and is remembered', function (string $locale, string $allArticles) {
-    $this->get(route('home', ['lang' => $locale]))
+test('a language prefix switches the interface and links stay in that language', function (string $locale, string $allArticles) {
+    $this->get('/'.$locale)
         ->assertOk()
         ->assertSee('<html lang="'.$locale.'">', false)
-        ->assertSee($allArticles);
+        ->assertSee($allArticles)
+        ->assertSee('href="'.config('app.url').'/'.$locale.'/our-team"', false);
 
-    $this->get(route('team'))
+    $this->get('/'.$locale.'/our-team')
+        ->assertOk()
         ->assertSee('<html lang="'.$locale.'">', false);
 
-    $this->get(route('team', ['lang' => 'en']))
+    $this->get('/our-team')
         ->assertSee('<html lang="en">', false)
         ->assertSee('All Articles');
 })->with('translation locales');
+
+test('old lang links redirect permanently to the prefixed address', function () {
+    $this->get('/our-team?lang=es')->assertStatus(301)->assertRedirect(config('app.url').'/es/our-team');
+    $this->get('/?lang=fr')->assertStatus(301)->assertRedirect(config('app.url').'/fr');
+    $this->get('/es/our-team?lang=en')->assertStatus(301)->assertRedirect(config('app.url').'/our-team');
+    $this->get('/en/contact')->assertStatus(301)->assertRedirect(config('app.url').'/contact');
+});
 
 test('an unsupported lang parameter is ignored', function () {
     $this->get(route('home', ['lang' => 'de']))
@@ -35,10 +44,10 @@ test('an unsupported lang parameter is ignored', function () {
 });
 
 test('the language switcher links to the current page in every language', function () {
-    $this->get(route('team'))
-        ->assertSee('href="'.route('team', ['lang' => 'es']).'"', false)
-        ->assertSee('href="'.route('team', ['lang' => 'fr']).'"', false)
-        ->assertSee('href="'.route('team', ['lang' => 'en']).'"', false);
+    $this->get('/es/our-team')
+        ->assertSee('href="'.config('app.url').'/our-team'.'"', false)
+        ->assertSee('href="'.config('app.url').'/es/our-team'.'"', false)
+        ->assertSee('href="'.config('app.url').'/fr/our-team'.'"', false);
 });
 
 test('translated articles are shown in the chosen language', function (string $locale) {
@@ -51,7 +60,7 @@ test('translated articles are shown in the chosen language', function (string $l
     $slug = basename($file, '.md');
     preg_match('/^title:\s*(.+)$/m', (string) file_get_contents($file), $title);
 
-    $this->get(route('article', ['slug' => $slug, 'lang' => $locale]))
+    $this->get('/'.$locale.'/p/'.$slug)
         ->assertOk()
         ->assertSee(e(json_decode($title[1])), false)
         ->assertDontSee(__('This article is currently available in English only.', [], $locale));

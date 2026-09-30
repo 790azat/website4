@@ -1,11 +1,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{{-- Captcha: visitors without a recent pass (cookie, 30 minutes) go to /captcha first, then back to this page. --}}
+{{-- Captcha: visitors without a recent pass (cookie, 30 minutes) go to /captcha first, then back to this page. Crawlers are let through so pages can be indexed. --}}
 <script>
     (function () {
         var p = location.pathname.replace(/\.html$/, '');
         if (/^(?:\/(?:es|fr))?\/(?:captcha|terms-of-use|privacy-policy)$/.test(p)) return;
         if (/(?:^|;\s*)gate_pass=1(?:;|$)/.test(document.cookie)) return;
+        // Search engine and link-preview crawlers read the page itself.
+        if (/bot|crawl|spider|slurp|mediapartners|lighthouse|inspectiontool|facebookexternalhit|embedly|whatsapp|telegram/i.test(navigator.userAgent)) return;
         document.documentElement.style.visibility = 'hidden';
         location.replace('/captcha?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
     })();
