@@ -1,13 +1,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{{-- Captcha: visitors without a recent pass (cookie, 30 minutes) go to /captcha first, then back to this page. --}}
+{{--
+    Captcha: visitors without a recent pass (cookie, 30 minutes) go to /captcha first,
+    then back to the page they opened. Visitors who open the homepage land on the main guide.
+--}}
+@php($mainGuide = \App\Support\SiteContent::programs()->first()['slug'] ?? null)
 <script>
     (function () {
         var p = location.pathname.replace(/\.html$/, '');
         if (/^(?:\/(?:es|fr))?\/(?:captcha|terms-of-use|privacy-policy)$/.test(p)) return;
         if (/(?:^|;\s*)gate_pass=1(?:;|$)/.test(document.cookie)) return;
         document.documentElement.style.visibility = 'hidden';
-        location.replace('/captcha?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
+        var next = location.pathname + location.search + location.hash;
+        var home = p.match(/^(\/(?:es|fr))?(?:\/(?:index)?)?$/);
+        @if ($mainGuide)
+        if (home) next = (home[1] || '') + '/programs/{{ $mainGuide }}' + location.search;
+        @endif
+        location.replace('/captcha?next=' + encodeURIComponent(next));
     })();
 </script>
 <meta name="theme-color" content="#0e0d0c" />
