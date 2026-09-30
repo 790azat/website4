@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
@@ -21,6 +22,9 @@ Route::view('c/{section}', 'section')->name('section');
 Route::view('c/{section}/page/{page}', 'section')->whereNumber('page')->name('section.page');
 Route::view('p/{slug}', 'article')->name('article');
 Route::view('programs/{slug}', 'program')->name('program');
+
+Route::get('sitemap.xml', [SitemapController::class, 'sitemap'])->name('sitemap');
+Route::get('robots.txt', [SitemapController::class, 'robots'])->name('robots');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');

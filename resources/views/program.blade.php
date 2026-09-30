@@ -23,6 +23,7 @@
     $title = $program['title'];
     $description = Str::limit($program['intro'], 155);
     $shareArticle = ['image' => $program['hero_image']];
+    $pageLocales = SiteContent::programLocales($program['slug']);
 
     $ctaButton = view('partials.program-cta', ['program' => $program])->render();
     $rendered = \App\Support\ArticleMarkdown::render($program['body']);

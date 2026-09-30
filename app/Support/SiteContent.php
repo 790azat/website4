@@ -231,6 +231,19 @@ class SiteContent
     }
 
     /**
+     * Languages, English included, a main guide can be read in.
+     *
+     * @return list<string>
+     */
+    public static function programLocales(string $slug): array
+    {
+        return ['en', ...array_values(array_filter(
+            self::TRANSLATION_LOCALES,
+            fn (string $locale) => is_file(resource_path('data/programs/'.$locale.'/'.$slug.'.md')),
+        ))];
+    }
+
+    /**
      * @return array<string, mixed>|null
      */
     public static function program(string $slug): ?array

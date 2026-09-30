@@ -27,7 +27,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
  * keep that prefix (mirroring the session-remembered language on the live
  * site). Search links ("q") cannot be pre-rendered and are left untouched.
  * PHP-served scripts (livewire.js, flux.js), public/ assets, a 404.html and a
- * vercel.json are written alongside.
+ * vercel.json are written alongside, as are sitemap.xml and robots.txt
+ * (rendered by the app itself, see SitemapController).
  */
 class ExportStaticSite extends Command
 {
@@ -48,7 +49,7 @@ class ExportStaticSite extends Command
     protected array $excludedPrefixes = [
         '/login', '/logout', '/register', '/forgot-password', '/reset-password',
         '/email', '/two-factor', '/user', '/dashboard', '/settings', '/livewire/update',
-        '/sitemap.xml', '/up',
+        '/up',
     ];
 
     /**
@@ -87,9 +88,8 @@ class ExportStaticSite extends Command
         $this->copyPublicAssets($files, $out);
 
         /** @var list<array{0: string, 1: array<string, string>}> $queue */
-        $queue = [['/', []], ['/captcha', []]];
+        $queue = [['/', []], ['/captcha', []], ['/sitemap.xml', []], ['/robots.txt', []]];
         $pages = 0;
-        $sitemap = [];
 
         while ($queue !== []) {
             [$path, $query] = array_shift($queue);
@@ -112,7 +112,6 @@ class ExportStaticSite extends Command
                 $pages++;
                 $body = $this->rewriteLinks($body, $query['lang'] ?? null, $queue);
                 $target = $this->staticPath($path, $query);
-                $sitemap[] = $target;
                 $target = $target === '/' ? '/index.html' : $target.'.html';
             } else {
                 $target = $path;
@@ -125,8 +124,6 @@ class ExportStaticSite extends Command
         [, $notFound] = $this->render($kernel, '/__static-export-not-found__', []);
         $unused = [];
         $files->put($out.'/404.html', $this->rewriteLinks($notFound, null, $unused));
-
-        $this->writeSitemap($files, $out, $sitemap);
 
         // Plain static files: no framework detection or build step on Vercel.
         $files->put($out.'/vercel.json', json_encode([
@@ -251,28 +248,6 @@ class ExportStaticSite extends Command
     }
 
     /**
-     * Writes sitemap.xml for the public domain and points robots.txt at it.
-     *
-     * @param  list<string>  $paths
-     */
-    protected function writeSitemap(Filesystem $files, string $out, array $paths): void
-    {
-        $base = 'https://'.config('app.domain');
-        $urls = collect($paths)
-            ->reject(fn (string $path) => str_contains($path, '/page/'))
-            ->unique()
-            ->sort()
-            ->map(fn (string $path) => '  <url><loc>'.e($base.($path === '/' ? '/' : $path)).'</loc></url>')
-            ->implode("\n");
-
-        $files->put($out.'/sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>'."\n"
-            .'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n".$urls."\n</urlset>\n");
-
-        $robots = is_file($out.'/robots.txt') ? rtrim((string) $files->get($out.'/robots.txt')) : "User-agent: *\nDisallow:";
-        $files->put($out.'/robots.txt', $robots."\n\nSitemap: {$base}/sitemap.xml\n");
-    }
-
-    /**
      * @param  array<string, string>  $query
      */
     protected function staticPath(string $path, array $query): string
@@ -310,7 +285,7 @@ class ExportStaticSite extends Command
         foreach ($files->allFiles(public_path(), true) as $file) {
             $relative = str_replace('\\', '/', $file->getRelativePathname());
 
-            if (in_array($relative, ['index.php', '.htaccess', 'hot'], true) || str_starts_with($relative, 'storage/')) {
+            if (in_array($relative, ['index.php', '.htaccess', 'hot', 'robots.txt'], true) || str_starts_with($relative, 'storage/')) {
                 continue;
             }
 

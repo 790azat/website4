@@ -14,6 +14,9 @@
     $perPage = 12;
     $totalArticles = $sectionArticles->count();
     $lastPage = max(1, (int) ceil($totalArticles / $perPage));
+    if ((int) request()->route('page') > $lastPage) {
+        abort(404);
+    }
     $page = max(1, min((int) (request()->route('page') ?? request()->query('page', 1)), $lastPage));
     $pagedArticles = $sectionArticles->forPage($page, $perPage)->values();
 

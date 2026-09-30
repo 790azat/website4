@@ -22,7 +22,51 @@
     $title = $article['title'];
     $description = Str::limit($article['excerpt'], 155);
     $shareArticle = $article;
+    $pageLocales = SiteContent::articleLocales($article['slug']);
+    $origin = \App\Support\Seo::origin();
+    $articleUrl = \App\Support\Seo::canonical($pageLocales);
+    $articleSchema = \App\Support\Seo::jsonLd([
+        '@graph' => [
+            array_filter([
+                '@type' => 'Article',
+                '@id' => $articleUrl.'#article',
+                'headline' => $article['title'],
+                'description' => $description,
+                'image' => $article['image'] ? $origin.'/images/'.$article['image'] : null,
+                'datePublished' => $publishedAt->toDateString(),
+                'dateModified' => \Carbon\Carbon::parse($article['updated'] ?? $article['date'])->toDateString(),
+                'inLanguage' => $article['locale'],
+                'articleSection' => $article['section_title'],
+                'wordCount' => str_word_count($article['body']),
+                'mainEntityOfPage' => $articleUrl,
+                'author' => array_filter([
+                    '@type' => 'Person',
+                    'name' => $author['name'],
+                    'jobTitle' => $author['role'] ?? null,
+                    'url' => \Illuminate\Support\Facades\Route::has('author') && isset(SiteContent::data()['authors'][$author['key'] ?? ''])
+                        ? \App\Support\Seo::url(route('author', $author['key'], false), $article['locale'])
+                        : null,
+                ]),
+                'publisher' => ['@id' => $origin.'/#organization'],
+            ]),
+            [
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => __('Home'), 'item' => \App\Support\Seo::url('/', $article['locale'])],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => $article['section_title'], 'item' => \App\Support\Seo::url(route('section', $article['section'], false), $article['locale'])],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $article['title'], 'item' => $articleUrl],
+                ],
+            ],
+        ],
+    ]);
 @endphp
+
+@push('head')
+    <meta property="article:published_time" content="{{ $publishedAt->toDateString() }}" />
+    <meta property="article:section" content="{{ $article['section_title'] }}" />
+    <meta property="article:author" content="{{ $author['name'] }}" />
+    <script type="application/ld+json">{!! $articleSchema !!}</script>
+@endpush
 
 @section('content')
     {{-- Article header --}}

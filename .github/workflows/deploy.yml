@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Deploys the full Laravel app to a PHP 8.4 server over SSH. The upload steps
+# run only when the repository variable DEPLOY_ENABLED is "true" and the
+# SSH_HOST, SSH_PORT, SSH_USERNAME, SSH_PASSWORD, DEPLOY_PATH and ENV_FILE
+# secrets are set (see DEPLOY.md); otherwise the job only checks the build.
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -42,15 +46,12 @@ jobs:
       - name: Build frontend assets
         run: npm run build
 
-      # Upload to the server (SFTP/rsync) is temporarily disabled; every
-      # other step still runs on each push. To re-enable, remove the
-      # `if: false` lines on this step and the next one.
       - name: Install rsync tools
-        if: false
+        if: vars.DEPLOY_ENABLED == 'true'
         run: sudo apt-get update && sudo apt-get install -y sshpass rsync
 
       - name: Deploy via rsync over SSH
-        if: false
+        if: vars.DEPLOY_ENABLED == 'true'
         env:
           SSHPASS: ${{ secrets.SSH_PASSWORD }}
         run: |
@@ -81,3 +82,12 @@ jobs:
             --exclude='/public/storage' \
             --exclude='/public/hot' \
             ./ "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}"
+
+      - name: Migrate and cache config, routes and views
+        if: vars.DEPLOY_ENABLED == 'true'
+        env:
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          sshpass -e ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no \
+            "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}" \
+            "cd '${{ secrets.DEPLOY_PATH }}' && php artisan migrate --force && php artisan optimize && (php artisan storage:link || true)"

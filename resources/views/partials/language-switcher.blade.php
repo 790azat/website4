@@ -1,7 +1,8 @@
 {{--
-    English / Spanish / French flag buttons. Each links to the current page with a
-    "?lang=" parameter, which App\Http\Middleware\SetLocale remembers in the
-    session. Full page loads (no wire:navigate) so the whole page re-renders.
+    English / Spanish / French flag buttons. Each links to the current page in
+    that language ("/our-team", "/es/our-team", "/fr/our-team"; see
+    App\Http\Middleware\SetLocale). Full page loads (no wire:navigate) so the
+    whole page re-renders.
 --}}
 @php
     $currentLocale = app()->getLocale();
@@ -15,7 +16,7 @@
 <div class="flex items-center gap-1" role="group" aria-label="{{ __('Language') }}">
     @foreach ($languages as $code => $label)
         <a
-            href="{{ request()->fullUrlWithQuery(['lang' => $code]) }}"
+            href="{{ \App\Support\Seo::switchUrl($code) }}"
             hreflang="{{ $code }}"
             lang="{{ $code }}"
             title="{{ $label }}"
