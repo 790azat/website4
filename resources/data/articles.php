@@ -27,6 +27,12 @@
 return [
 
     'sections' => [
+        'media-buying' => [
+            'title' => 'Media Buying Guides',
+            'order' => 0,
+            'icon' => 'presentation-chart-line',
+            'description' => 'Facebook and TikTok ads, creatives, optimization events, traffic quality, and how we evaluate traffic partners.',
+        ],
         'personal-injury' => [
             'title' => 'Personal Injury & Accident Law',
             'order' => 1,

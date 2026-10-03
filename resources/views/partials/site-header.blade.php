@@ -43,7 +43,7 @@
 
     {{-- Topic bar: numbered like ledger entries --}}
     <div class="hidden border-b border-line bg-surface/95 backdrop-blur-md lg:block">
-        <nav class="mx-auto flex h-12 max-w-7xl items-stretch px-6 text-sm font-semibold whitespace-nowrap lg:px-8">
+        <nav class="mx-auto flex h-12 max-w-7xl items-stretch overflow-x-auto px-6 text-sm font-semibold whitespace-nowrap [scrollbar-width:none] lg:px-8">
             <a href="{{ route('home') }}" wire:navigate @class([
                 'flex items-center gap-2 border-r border-line pr-5 transition',
                 'text-ink' => request()->routeIs('home'),

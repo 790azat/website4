@@ -6,8 +6,12 @@
     $title = null;
     $description = __(':site publishes clear, research-driven guides to personal injury, family and immigration, criminal and employment, and business and property law.', ['site' => $siteName]);
 
-    $categories = SiteContent::categories();
-    $allArticles = SiteContent::articles();
+    // Media Buying Guides are the site's main articles: they get their own band
+    // and stay out of the law-topic grids and the latest-guides list.
+    $mainSection = SiteContent::section('media-buying');
+    $mainArticles = SiteContent::articles('media-buying');
+    $categories = SiteContent::categories()->where('id', '!=', 'media-buying')->values();
+    $allArticles = SiteContent::articles()->where('section', '!=', 'media-buying')->values();
     $heroArticle = $allArticles->first();
     $featuredArticle = $allArticles->get(1);
     $sideArticles = $allArticles->slice(2, 3)->values();
@@ -163,6 +167,30 @@
             @endforeach
         </div>
     </section>
+
+    {{-- Main articles: the Media Buying Guides --}}
+    @if ($mainSection && $mainArticles->isNotEmpty())
+        <section id="main-articles" class="mx-auto max-w-7xl scroll-mt-36 px-6 pt-20 lg:px-8">
+            <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+                <div class="max-w-2xl">
+                    <span class="eyebrow">{{ __('Main articles') }}</span>
+                    <h2 class="mt-4 font-display text-4xl font-semibold tracking-tight text-ink">{{ $mainSection['title'] }}</h2>
+                    @if ($mainSection['description'])
+                        <p class="mt-4 leading-relaxed text-body">{{ $mainSection['description'] }}</p>
+                    @endif
+                </div>
+                <a href="{{ route('section', 'media-buying') }}" wire:navigate class="btn-ghost shrink-0">
+                    {{ __('View all articles') }}
+                    <flux:icon name="arrow-right" variant="mini" class="size-4" />
+                </a>
+            </div>
+            <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                @foreach ($mainArticles->take(9) as $article)
+                    @include('partials.article-card', ['article' => $article])
+                @endforeach
+            </div>
+        </section>
+    @endif
 
     {{-- Main guides: the standalone in-depth guides --}}
     @if ($programs->isNotEmpty())
