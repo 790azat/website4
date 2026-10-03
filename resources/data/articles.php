@@ -27,12 +27,6 @@
 return [
 
     'sections' => [
-        'media-buying' => [
-            'title' => 'Media Buying Guides',
-            'order' => 0,
-            'icon' => 'presentation-chart-line',
-            'description' => 'Actionable playbooks built from daily media buying. No generic theory - just field-tested strategies covering search arbitrage, RSOC compliance, TikTok and Meta optimization, traffic quality evaluation, and creative automation systems.',
-        ],
         'personal-injury' => [
             'title' => 'Personal Injury & Accident Law',
             'order' => 1,
@@ -102,13 +96,6 @@ return [
             'bio' => 'Camila Ferreira is an insurance risk analyst and consumer educator specializing in policy underwriting, coverage exclusions, and claim appeals.',
             'bio_long' => 'Camila Ferreira brings a sharp analytical background in risk assessment and policy underwriting to consumer advocacy. Having evaluated countless commercial and personal policy structures, Camila understands the exact clauses that dictate claim approvals and denials. She writes practical guides designed to help policyholders understand their coverage limits, spot bad-faith practices, and navigate insurance negotiations with confidence. Outside of work, Camila is passionate about acoustic guitar and landscape painting.',
         ],
-    ],
-
-    // Main articles: shown in the "Main guides" block on the homepage, and
-    // visitors who open the homepage land on the first one after the captcha.
-    'main_articles' => [
-        'why-we-reject-traffic-even-when-the-volume-looks-good',
-        'what-we-look-for-in-a-traffic-partner-and-how-we-evaluate-a-new-feed',
     ],
 
     'programs' => [

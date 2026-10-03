@@ -21,7 +21,7 @@ use Illuminate\Support\Str;
  * generated artwork (or author initials) instead of broken images.
  *
  * @phpstan-type Section array{title: string, order?: int, icon?: string, description?: string}
- * @phpstan-type Content array{sections: array<string, Section>, authors: array<string, array<string, mixed>>, articles: list<array<string, mixed>>, programs?: list<array<string, mixed>>, main_articles?: list<string>, translations: array<string, array<string, array<string, mixed>>>}
+ * @phpstan-type Content array{sections: array<string, Section>, authors: array<string, array<string, mixed>>, articles: list<array<string, mixed>>, programs?: list<array<string, mixed>>, translations: array<string, array<string, array<string, mixed>>>}
  * @phpstan-type Category array{id: string, title: string, description: string|null, icon: string, order: int, count: int}
  */
 class SiteContent
@@ -227,19 +227,6 @@ class SiteContent
             })
             ->map(static::withProgramImage(...))
             ->sortByDesc('date')
-            ->values();
-    }
-
-    /**
-     * The homepage's main articles, in the order set in articles.php.
-     *
-     * @return Collection<int, non-empty-array<string, mixed>>
-     */
-    public static function mainArticles(): Collection
-    {
-        return collect(static::data()['main_articles'] ?? [])
-            ->map(fn (string $slug) => static::article($slug))
-            ->filter()
             ->values();
     }
 

@@ -6,18 +6,14 @@
     $title = null;
     $description = __(':site publishes clear, research-driven guides to personal injury, family and immigration, criminal and employment, and business and property law.', ['site' => $siteName]);
 
-    // Media Buying Guides are the site's main articles: they get their own band
-    // and stay out of the law-topic grids and the latest-guides list.
-    $mainSection = SiteContent::section('media-buying');
-    $leadArticles = SiteContent::mainArticles();
-    $mainArticles = SiteContent::articles('media-buying')->whereNotIn('slug', $leadArticles->pluck('slug'))->values();
-    $categories = SiteContent::categories()->where('id', '!=', 'media-buying')->values();
-    $allArticles = SiteContent::articles()->where('section', '!=', 'media-buying')->values();
+    $categories = SiteContent::categories();
+    $allArticles = SiteContent::articles();
     $heroArticle = $allArticles->first();
     $featuredArticle = $allArticles->get(1);
     $sideArticles = $allArticles->slice(2, 3)->values();
     $latestArticles = $allArticles->slice(5, 6)->values();
     $authors = SiteContent::authors();
+    $programs = SiteContent::programs();
 
     // Three newest articles per topic for the topic columns.
     $topicColumns = $categories->map(fn ($category) => $category + ['articles' => SiteContent::articles($category['id'])->take(3)]);
@@ -168,41 +164,17 @@
         </div>
     </section>
 
-    {{-- Main guides: the two main articles (articles.php 'main_articles') --}}
-    @if ($leadArticles->isNotEmpty())
+    {{-- Main guides: the standalone in-depth guides --}}
+    @if ($programs->isNotEmpty())
         <section id="main-guides" class="mx-auto max-w-7xl scroll-mt-36 px-6 pt-20 lg:px-8">
             <div class="max-w-2xl">
                 <span class="eyebrow">{{ __('Main guides') }}</span>
                 <h2 class="mt-4 font-display text-4xl font-bold tracking-tight text-ink">{{ __('In-depth guides to start with') }}</h2>
-                <p class="mt-4 leading-relaxed text-body">{{ __('Start here: the two guides our media buyers rely on most.') }}</p>
+                <p class="mt-4 leading-relaxed text-body">{{ __('Our most complete guides to the legal questions readers ask us most.') }}</p>
             </div>
-            <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2">
-                @foreach ($leadArticles as $article)
-                    @include('partials.article-card', ['article' => $article])
-                @endforeach
-            </div>
-        </section>
-    @endif
-
-    {{-- Main articles: the Media Buying Guides --}}
-    @if ($mainSection && $mainArticles->isNotEmpty())
-        <section id="main-articles" class="mx-auto max-w-7xl scroll-mt-36 px-6 pt-20 lg:px-8">
-            <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-                <div class="max-w-2xl">
-                    <span class="eyebrow">{{ __('Main articles') }}</span>
-                    <h2 class="mt-4 font-display text-4xl font-semibold tracking-tight text-ink">{{ $mainSection['title'] }}</h2>
-                    @if ($mainSection['description'])
-                        <p class="mt-4 leading-relaxed text-body">{{ $mainSection['description'] }}</p>
-                    @endif
-                </div>
-                <a href="{{ route('section', 'media-buying') }}" wire:navigate class="btn-ghost shrink-0">
-                    {{ __('View all articles') }}
-                    <flux:icon name="arrow-right" variant="mini" class="size-4" />
-                </a>
-            </div>
-            <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-                @foreach ($mainArticles->take(9) as $article)
-                    @include('partials.article-card', ['article' => $article])
+            <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                @foreach ($programs as $program)
+                    @include('partials.program-card', ['program' => $program])
                 @endforeach
             </div>
         </section>
