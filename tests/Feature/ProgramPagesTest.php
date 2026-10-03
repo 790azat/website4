@@ -48,11 +48,13 @@ test('every main guide points to an existing section and related article', funct
     }
 });
 
-test('the home page lists every main guide', function () {
+test('the home page lists every main article', function () {
     $response = $this->get(route('home'))->assertOk();
 
-    foreach (SiteContent::programs() as $program) {
-        $response->assertSee(route('program', $program['slug']));
+    expect(SiteContent::mainArticles())->not->toBeEmpty();
+
+    foreach (SiteContent::mainArticles() as $article) {
+        $response->assertSee(route('article', $article['slug']));
     }
 });
 
