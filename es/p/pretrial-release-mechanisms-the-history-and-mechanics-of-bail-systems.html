@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<script>
+    (function () {
+        var p = location.pathname.replace(/\.html$/, '');
+        if (/^(?:\/(?:es|fr))?\/(?:captcha|terms-of-use|privacy-policy)$/.test(p)) return;
+        if (/(?:^|;\s*)gate_pass=1(?:;|$)/.test(document.cookie)) return;
+        document.documentElement.style.visibility = 'hidden';
+        var next = location.pathname + location.search + location.hash;
+        var home = p.match(/^(\/(?:es|fr))?(?:\/(?:index)?)?$/);
+                if (home) next = (home[1] || '') + '/programs/18-wheeler-accident-lawyers-the-full-guide-to-truck-accident-legal-representation' + location.search;
+                location.replace('/captcha?next=' + encodeURIComponent(next));
+    })();
+</script>
+<meta name="theme-color" content="#0e0d0c" />
+
+<title>
+    Mecanismos de libertad previa al juicio: la historia y el funcionamiento de los sistemas de fianza — Casebook
+</title>
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<style>
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/public-sans-400-normal-8Rpg0ruU.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/public-sans-400-normal-SBbinRkI.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/public-sans-500-normal-NlrCPXnF.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/public-sans-500-normal-vCxiVFAq.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/public-sans-600-normal-Fru-LXNs.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/public-sans-600-normal-BR59oU-I.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/public-sans-700-normal-BqJmxWdE.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/public-sans-700-normal-Dm-oTPSL.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/fraunces-500-italic-CjxnbVsv.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/fraunces-500-italic-Bp1RWfBU.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/fraunces-600-italic-O70d2LGK.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/fraunces-600-italic-BlP2rMdV.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/fraunces-700-italic-BTx51a-P.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/fraunces-700-italic-Bjyesmbf.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/fraunces-500-normal-DnGCNyPD.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/fraunces-500-normal-BTR4KCeb.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/fraunces-600-normal-BFCDtZfi.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/fraunces-600-normal-DL5QCzvS.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/fraunces-700-normal-CEOla-zY.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/fraunces-700-normal-DTjk5d1Q.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/ibm-plex-mono-500-normal-DSY6xOcd.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/ibm-plex-mono-500-normal-CB9ihrfo.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/ibm-plex-mono-600-normal-BgSNZQsw.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/ibm-plex-mono-600-normal-DWFSQ4vo.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+  --font-public-sans: "Public Sans";
+  --font-fraunces: "Fraunces";
+  --font-ibm-plex-mono: "IBM Plex Mono";
+}
+
+.font-public-sans {
+  font-family: var(--font-public-sans);
+}
+
+.font-fraunces {
+  font-family: var(--font-fraunces);
+}
+
+.font-ibm-plex-mono {
+  font-family: var(--font-ibm-plex-mono);
+}
+</style>
+<link rel="preload" as="style" href="/build/assets/app-CZKV6nkv.css" /><link rel="modulepreload" as="script" href="/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="/build/assets/app-CZKV6nkv.css" data-navigate-track="reload" /><script type="module" src="/build/assets/app-BvRk9kiK.js" data-navigate-track="reload"></script><style>
+    :root.dark {
+        color-scheme: dark;
+    }
+</style>
+<script>
+    window.Flux = {
+        applyAppearance (appearance) {
+            let applyDark = () => document.documentElement.classList.add('dark')
+            let applyLight = () => document.documentElement.classList.remove('dark')
+
+            if (appearance === 'system') {
+                let media = window.matchMedia('(prefers-color-scheme: dark)')
+
+                window.localStorage.removeItem('flux.appearance')
+
+                media.matches ? applyDark() : applyLight()
+            } else if (appearance === 'dark') {
+                window.localStorage.setItem('flux.appearance', 'dark')
+
+                applyDark()
+            } else if (appearance === 'light') {
+                window.localStorage.setItem('flux.appearance', 'light')
+
+                applyLight()
+            }
+        }
+    }
+
+    window.Flux.applyAppearance(window.localStorage.getItem('flux.appearance') || 'system')
+</script>
+                    <meta name="description" content="La libertad previa al juicio se refiere a los mecanismos legales mediante los cuales una persona acusada de un delito puede permanecer en la comunidad mien..." />
+                        <meta property="og:site_name" content="Casebook" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Mecanismos de libertad previa al juicio: la historia y el funcionamiento de los sistemas de fianza" />
+                    <meta property="og:description" content="La libertad previa al juicio se refiere a los mecanismos legales mediante los cuales una persona acusada de un delito puede permanecer en la comunidad mien..." />
+                <meta property="og:image" content="https://casebook.example/images/articles/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems.webp" />
+        <meta property="og:locale" content="es_ES" />
+        <meta name="twitter:card" content="summary_large_image" />
+                    <link rel="alternate" hreflang="en" href="/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems" />
+                    <link rel="alternate" hreflang="es" href="/es/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems" />
+                    <link rel="alternate" hreflang="fr" href="/fr/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems" />
+                <link rel="alternate" hreflang="x-default" href="/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems" />
+    <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+</head>
+    <body
+        x-data="{ mobileOpen: false }"
+        class="min-h-screen bg-paper font-sans text-ink antialiased selection:bg-zest-300 selection:text-navy-950"
+    >
+        <header class="sticky top-0 z-40">
+        <div class="bg-navy-950 text-white">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-6 lg:px-8">
+            <a href="/es" wire:navigate class="shrink-0" aria-label="Inicio de Casebook">
+                <span class="inline-flex shrink-0 items-center gap-2.5">
+    <svg class="size-9 shrink-0" viewBox="0 0 32 32" aria-hidden="true">
+    <rect width="32" height="32" rx="7" fill="#0e0d0c" />
+    <text x="16" y="24.5" text-anchor="middle" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#fdd22b">&#167;</text>
+</svg>
+    <span class="font-display leading-none font-semibold tracking-tight text-[1.6rem] text-white">Casebook<span class="text-zest-400">.</span></span>
+</span>
+            </a>
+
+            <div class="flex items-center gap-2 sm:gap-5">
+                <nav class="hidden items-center gap-6 text-sm font-medium text-navy-300 lg:flex">
+                    <a href="/es/our-team" wire:navigate class="transition hover:text-white">Nuestro equipo</a>
+                    <a href="/es/contact" wire:navigate class="transition hover:text-white">Contacto</a>
+                </nav>
+
+                <span class="hidden h-6 w-px bg-navy-700 lg:block"></span>
+
+                <div class="hidden sm:block">
+                    <div class="flex items-center gap-1" role="group" aria-label="Idioma">
+            <a
+            href="/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems"
+            hreflang="en"
+            lang="en"
+            title="English"
+            aria-label="English"
+                        class="flex items-center justify-center rounded-md p-1.5 transition opacity-60 hover:bg-navy-800 hover:opacity-100"
+        >
+                            <svg class="h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-white/20" viewBox="0 0 60 30" aria-hidden="true">
+                    <rect width="60" height="30" fill="#012169" />
+                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                    <path d="M0,0 L30,15 M60,0 L30,15 M60,30 L30,15 M0,30 L30,15" stroke="#C8102E" stroke-width="2" />
+                    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                    <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                </svg>
+                    </a>
+            <a
+            href="/es/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems"
+            hreflang="es"
+            lang="es"
+            title="Español"
+            aria-label="Español"
+             aria-current="true"             class="flex items-center justify-center rounded-md p-1.5 transition bg-navy-700 ring-1 ring-zest-400/60"
+        >
+                            <svg class="h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-white/20" viewBox="0 0 30 20" aria-hidden="true">
+                    <rect width="30" height="20" fill="#AA151B" />
+                    <rect y="5" width="30" height="10" fill="#F1BF00" />
+                </svg>
+                    </a>
+            <a
+            href="/fr/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems"
+            hreflang="fr"
+            lang="fr"
+            title="Français"
+            aria-label="Français"
+                        class="flex items-center justify-center rounded-md p-1.5 transition opacity-60 hover:bg-navy-800 hover:opacity-100"
+        >
+                            <svg class="h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-white/20" viewBox="0 0 30 20" aria-hidden="true">
+                    <rect width="30" height="20" fill="#FFFFFF" />
+                    <rect width="10" height="20" fill="#002654" />
+                    <rect x="20" width="10" height="20" fill="#CE1126" />
+                </svg>
+                    </a>
+    </div>
+                </div>
+
+                <a href="/es/articles" wire:navigate class="hidden items-center gap-2 rounded-md bg-zest-400 px-4 py-2 text-sm font-bold text-navy-950 transition hover:bg-zest-300 sm:inline-flex">
+                    <svg class="shrink-0 [:where(&amp;)]:size-5 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z"/>
+</svg>
+
+                            Todos los artículos
+                </a>
+
+                <button
+                    type="button"
+                    @click="mobileOpen = true"
+                    class="flex size-10 items-center justify-center rounded-md border border-navy-700 text-white transition hover:border-zest-400 lg:hidden"
+                    aria-label="Abrir menú"
+                >
+                    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 7h16M4 12h16M10 17h10" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="hidden border-b border-line bg-surface/95 backdrop-blur-md lg:block">
+        <nav class="mx-auto flex h-12 max-w-7xl items-stretch px-6 text-sm font-semibold whitespace-nowrap lg:px-8">
+            <a href="/es" wire:navigate class="flex items-center gap-2 border-r border-line pr-5 transition text-muted hover:text-ink">
+                <svg class="shrink-0 [:where(&amp;)]:size-4 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M8.543 2.232a.75.75 0 0 0-1.085 0l-5.25 5.5A.75.75 0 0 0 2.75 9H4v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V9h1.25a.75.75 0 0 0 .543-1.268l-5.25-5.5Z"/>
+</svg>
+
+                        Inicio
+            </a>
+                                            <a href="/es/c/personal-injury" wire:navigate class="relative flex items-center gap-2.5 border-r border-line px-5 transition text-muted hover:bg-soft hover:text-ink">
+                    <span class="font-mono text-[11px] text-brand-600 dark:text-brand-300">01</span>
+                    Derecho de lesiones personales y accidentes
+                </a>
+                                            <a href="/es/c/family-immigration" wire:navigate class="relative flex items-center gap-2.5 border-r border-line px-5 transition text-muted hover:bg-soft hover:text-ink">
+                    <span class="font-mono text-[11px] text-brand-600 dark:text-brand-300">02</span>
+                    Derecho de familia e inmigración
+                </a>
+                                            <a href="/es/c/criminal-employment" wire:navigate class="relative flex items-center gap-2.5 border-r border-line px-5 transition text-muted hover:bg-soft hover:text-ink">
+                    <span class="font-mono text-[11px] text-brand-600 dark:text-brand-300">03</span>
+                    Derecho penal y laboral
+                </a>
+                                            <a href="/es/c/business-property" wire:navigate class="relative flex items-center gap-2.5 border-r border-line px-5 transition text-muted hover:bg-soft hover:text-ink">
+                    <span class="font-mono text-[11px] text-brand-600 dark:text-brand-300">04</span>
+                    Derecho empresarial, inmobiliario y financiero
+                </a>
+                    </nav>
+    </div>
+</header>
+
+
+<div x-show="mobileOpen" x-cloak class="fixed inset-0 z-50 lg:hidden" @keydown.escape.window="mobileOpen = false">
+    <div x-show="mobileOpen" x-transition.opacity class="fixed inset-0 bg-navy-950/70 backdrop-blur-sm" @click="mobileOpen = false"></div>
+    <div
+        x-show="mobileOpen"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="-translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="-translate-x-full"
+        class="fixed inset-y-0 left-0 flex w-full max-w-sm flex-col bg-paper"
+    >
+        <div class="flex items-center justify-between border-t-4 border-zest-400 bg-navy-950 px-6 py-5">
+            <a href="/es" wire:navigate @click="mobileOpen = false">
+                <span class="inline-flex shrink-0 items-center gap-2.5">
+    <svg class="size-7 shrink-0" viewBox="0 0 32 32" aria-hidden="true">
+    <rect width="32" height="32" rx="7" fill="#0e0d0c" />
+    <text x="16" y="24.5" text-anchor="middle" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#fdd22b">&#167;</text>
+</svg>
+    <span class="font-display leading-none font-semibold tracking-tight text-xl text-white">Casebook<span class="text-zest-400">.</span></span>
+</span>
+            </a>
+            <button type="button" @click="mobileOpen = false" class="flex size-10 items-center justify-center rounded-md border border-navy-700 text-white" aria-label="Cerrar menú">
+                <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+
+        <nav class="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-6">
+            <a href="/es" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-bold text-ink hover:bg-soft">Inicio</a>
+            <a href="/es/articles" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-bold text-ink hover:bg-soft">Todos los artículos</a>
+
+            <p class="eyebrow mt-5 mb-2 px-4">Temas</p>
+                            <a href="/es/c/personal-injury" wire:navigate @click="mobileOpen = false" class="flex items-center gap-3 rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">
+                    <span class="flex size-8 items-center justify-center rounded-md bg-navy-950 text-zest-400">
+                        <svg class="shrink-0 [:where(&amp;)]:size-5 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M10 2a.75.75 0 0 1 .75.75v.258a33.186 33.186 0 0 1 6.668.83.75.75 0 0 1-.336 1.461 31.28 31.28 0 0 0-1.103-.232l1.702 7.545a.75.75 0 0 1-.387.832A4.981 4.981 0 0 1 15 14c-.825 0-1.606-.2-2.294-.556a.75.75 0 0 1-.387-.832l1.77-7.849a31.743 31.743 0 0 0-3.339-.254v11.505a20.01 20.01 0 0 1 3.78.501.75.75 0 1 1-.339 1.462A18.558 18.558 0 0 0 10 17.5c-1.442 0-2.845.165-4.191.477a.75.75 0 0 1-.338-1.462 20.01 20.01 0 0 1 3.779-.501V4.509c-1.129.026-2.243.112-3.34.254l1.771 7.85a.75.75 0 0 1-.387.83A4.98 4.98 0 0 1 5 14a4.98 4.98 0 0 1-2.294-.556.75.75 0 0 1-.387-.832L4.02 5.067c-.37.07-.738.148-1.103.232a.75.75 0 0 1-.336-1.462 32.845 32.845 0 0 1 6.668-.829V2.75A.75.75 0 0 1 10 2ZM5 7.543 3.92 12.33a3.499 3.499 0 0 0 2.16 0L5 7.543Zm10 0-1.08 4.787a3.498 3.498 0 0 0 2.16 0L15 7.543Z" clip-rule="evenodd"/>
+</svg>
+
+                            </span>
+                    Derecho de lesiones personales y accidentes
+                </a>
+                            <a href="/es/c/family-immigration" wire:navigate @click="mobileOpen = false" class="flex items-center gap-3 rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">
+                    <span class="flex size-8 items-center justify-center rounded-md bg-navy-950 text-zest-400">
+                        <svg class="shrink-0 [:where(&amp;)]:size-5 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M7 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM14.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM1.615 16.428a1.224 1.224 0 0 1-.569-1.175 6.002 6.002 0 0 1 11.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 0 1 7 18a9.953 9.953 0 0 1-5.385-1.572ZM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 0 0-1.588-3.755 4.502 4.502 0 0 1 5.874 2.636.818.818 0 0 1-.36.98A7.465 7.465 0 0 1 14.5 16Z"/>
+</svg>
+
+                            </span>
+                    Derecho de familia e inmigración
+                </a>
+                            <a href="/es/c/criminal-employment" wire:navigate @click="mobileOpen = false" class="flex items-center gap-3 rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">
+                    <span class="flex size-8 items-center justify-center rounded-md bg-navy-950 text-zest-400">
+                        <svg class="shrink-0 [:where(&amp;)]:size-5 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M6 3.75A2.75 2.75 0 0 1 8.75 1h2.5A2.75 2.75 0 0 1 14 3.75v.443c.572.055 1.14.122 1.706.2C17.053 4.582 18 5.75 18 7.07v3.469c0 1.126-.694 2.191-1.83 2.54-1.952.599-4.024.921-6.17.921s-4.219-.322-6.17-.921C2.694 12.73 2 11.665 2 10.539V7.07c0-1.321.947-2.489 2.294-2.676A41.047 41.047 0 0 1 6 4.193V3.75Zm6.5 0v.325a41.622 41.622 0 0 0-5 0V3.75c0-.69.56-1.25 1.25-1.25h2.5c.69 0 1.25.56 1.25 1.25ZM10 10a1 1 0 0 0-1 1v.01a1 1 0 0 0 1 1h.01a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1H10Z" clip-rule="evenodd"/>
+  <path d="M3 15.055v-.684c.126.053.255.1.39.142 2.092.642 4.313.987 6.61.987 2.297 0 4.518-.345 6.61-.987.135-.041.264-.089.39-.142v.684c0 1.347-.985 2.53-2.363 2.686a41.454 41.454 0 0 1-9.274 0C3.985 17.585 3 16.402 3 15.055Z"/>
+</svg>
+
+                            </span>
+                    Derecho penal y laboral
+                </a>
+                            <a href="/es/c/business-property" wire:navigate @click="mobileOpen = false" class="flex items-center gap-3 rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">
+                    <span class="flex size-8 items-center justify-center rounded-md bg-navy-950 text-zest-400">
+                        <svg class="shrink-0 [:where(&amp;)]:size-5 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M1 2.75A.75.75 0 0 1 1.75 2h10.5a.75.75 0 0 1 0 1.5H12v13.75a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1-.75-.75v-2.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5H2v-13h-.25A.75.75 0 0 1 1 2.75ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM8 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM8.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM14.25 6a.75.75 0 0 0-.75.75V17a1 1 0 0 0 1 1h3.75a.75.75 0 0 0 0-1.5H18v-9h.25a.75.75 0 0 0 0-1.5h-4Zm.5 3.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm.5 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" clip-rule="evenodd"/>
+</svg>
+
+                            </span>
+                    Derecho empresarial, inmobiliario y financiero
+                </a>
+            
+            <p class="eyebrow mt-5 mb-2 px-4">Acerca de</p>
+            <a href="/es/our-team" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">Nuestro equipo</a>
+            <a href="/es/contact" wire:navigate @click="mobileOpen = false" class="rounded-md px-4 py-3 font-semibold text-body hover:bg-soft">Contacto</a>
+
+            <div class="mt-6 px-4">
+                <div class="inline-flex rounded-md bg-navy-950 p-1.5">
+                    <div class="flex items-center gap-1" role="group" aria-label="Idioma">
+            <a
+            href="/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems"
+            hreflang="en"
+            lang="en"
+            title="English"
+            aria-label="English"
+                        class="flex items-center justify-center rounded-md p-1.5 transition opacity-60 hover:bg-navy-800 hover:opacity-100"
+        >
+                            <svg class="h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-white/20" viewBox="0 0 60 30" aria-hidden="true">
+                    <rect width="60" height="30" fill="#012169" />
+                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                    <path d="M0,0 L30,15 M60,0 L30,15 M60,30 L30,15 M0,30 L30,15" stroke="#C8102E" stroke-width="2" />
+                    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                    <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                </svg>
+                    </a>
+            <a
+            href="/es/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems"
+            hreflang="es"
+            lang="es"
+            title="Español"
+            aria-label="Español"
+             aria-current="true"             class="flex items-center justify-center rounded-md p-1.5 transition bg-navy-700 ring-1 ring-zest-400/60"
+        >
+                            <svg class="h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-white/20" viewBox="0 0 30 20" aria-hidden="true">
+                    <rect width="30" height="20" fill="#AA151B" />
+                    <rect y="5" width="30" height="10" fill="#F1BF00" />
+                </svg>
+                    </a>
+            <a
+            href="/fr/p/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems"
+            hreflang="fr"
+            lang="fr"
+            title="Français"
+            aria-label="Français"
+                        class="flex items-center justify-center rounded-md p-1.5 transition opacity-60 hover:bg-navy-800 hover:opacity-100"
+        >
+                            <svg class="h-3.5 w-5 overflow-hidden rounded-[2px] ring-1 ring-white/20" viewBox="0 0 30 20" aria-hidden="true">
+                    <rect width="30" height="20" fill="#FFFFFF" />
+                    <rect width="10" height="20" fill="#002654" />
+                    <rect x="20" width="10" height="20" fill="#CE1126" />
+                </svg>
+                    </a>
+    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+        <main>
+                
+    <section class="relative overflow-hidden bg-navy-900 text-white">
+        <div class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(to_bottom,transparent_0_31px,var(--color-navy-800)_31px_32px)] [mask-image:linear-gradient(to_left,black,transparent_75%)]"></div>
+
+        <div class="relative mx-auto max-w-6xl px-6 pt-8 lg:px-8 pb-40 lg:pb-52">
+            <nav class="flex flex-wrap items-center gap-2 text-sm text-navy-300" aria-label="Ruta de navegación">
+                <a href="/es" wire:navigate class="flex items-center gap-1.5 font-semibold hover:text-white">
+                    <svg class="shrink-0 [:where(&amp;)]:size-4 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M8.543 2.232a.75.75 0 0 0-1.085 0l-5.25 5.5A.75.75 0 0 0 2.75 9H4v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V9h1.25a.75.75 0 0 0 .543-1.268l-5.25-5.5Z"/>
+</svg>
+
+         Inicio
+                </a>
+                <svg class="shrink-0 [:where(&amp;)]:size-4 size-3.5 text-navy-500" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
+</svg>
+
+                        <a href="/es/c/criminal-employment" wire:navigate class="font-semibold hover:text-white">Derecho penal y laboral</a>
+            </nav>
+
+            <a href="/es/c/criminal-employment" wire:navigate class="mt-10 inline-flex items-center gap-2 rounded-md bg-zest-400 px-2.5 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] text-navy-950 uppercase">
+                <svg class="shrink-0 [:where(&amp;)]:size-4 size-3.5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M11 4V3a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1ZM9 2.5H7a.5.5 0 0 0-.5.5v1h3V3a.5.5 0 0 0-.5-.5ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"/>
+  <path d="M3 11.83V12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-.17c-.313.11-.65.17-1 .17H4c-.35 0-.687-.06-1-.17Z"/>
+</svg>
+
+                        Derecho penal y laboral
+            </a>
+
+            <h1 class="mt-5 max-w-4xl font-display text-4xl leading-[1.02] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+                Mecanismos de libertad previa al juicio: la historia y el funcionamiento de los sistemas de fianza
+            </h1>
+
+            <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">
+                <a href="/es/author/daniel-foster" wire:navigate class="flex items-center gap-3">
+                    <span class="size-12 text-sm !ring-navy-700 flex shrink-0 items-center justify-center rounded-full bg-navy-800 font-mono font-semibold text-zest-400 ring-2 ring-surface" aria-hidden="true">
+        DF
+    </span>
+                    <span>
+                        <span class="block font-bold text-white hover:text-zest-300">Daniel Foster</span>
+                        <span class="text-navy-300">Litigios civiles y derechos laborales</span>
+                    </span>
+                </a>
+                <span class="flex items-center gap-2 text-navy-300">
+                    <svg class="shrink-0 [:where(&amp;)]:size-5 size-4 text-zest-400" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z" clip-rule="evenodd"/>
+</svg>
+
+                            <time datetime="2026-06-15">15 de junio de 2026</time>
+                </span>
+                <span class="flex items-center gap-2 text-navy-300">
+                    <svg class="shrink-0 [:where(&amp;)]:size-5 size-4 text-zest-400" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"/>
+</svg>
+
+                            12 min de lectura
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <article class="mx-auto max-w-6xl px-6 lg:px-8">
+        
+                    <div class="relative -mt-28 overflow-hidden rounded-md shadow-[10px_10px_0_0_var(--color-zest-400)] lg:-mt-40">
+                <img src="/images/articles/pretrial-release-mechanisms-the-history-and-mechanics-of-bail-systems.webp" alt="Mecanismos de libertad previa al juicio: la historia y el funcionamiento de los sistemas de fianza" class="aspect-[21/9] w-full object-cover" />
+            </div>
+        
+        
+        <div class="grid gap-12 pt-12 pb-16 lg:grid-cols-12">
+            
+                            <aside class="lg:col-span-4">
+                    <nav class="rounded-md border border-line bg-surface p-5 lg:sticky lg:top-36" aria-label="En este artículo" x-data="{ open: false }">
+                        <button type="button" class="flex w-full items-center justify-between text-left lg:pointer-events-none" @click="open = ! open">
+                            <span class="eyebrow">En este artículo</span>
+                            <svg class="shrink-0 [:where(&amp;)]:size-5 size-4 text-muted transition lg:hidden" :class="open && 'rotate-180'" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
+</svg>
+
+                                </button>
+                        <ol class="mt-4 hidden max-h-[60vh] overflow-y-auto border-l-2 border-line text-sm lg:block" :class="open && '!block'">
+                                                            <li>
+                                    <a href="#los-primeros-origenes-de-la-fianza" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">Los primeros orígenes de la fianza</a>
+                                </li>
+                                                            <li>
+                                    <a href="#el-modelo-tradicional-de-fianza-monetaria" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">El modelo tradicional de fianza monetaria</a>
+                                </li>
+                                                            <li>
+                                    <a href="#el-movimiento-de-reforma-de-la-fianza" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">El movimiento de reforma de la fianza</a>
+                                </li>
+                                                            <li>
+                                    <a href="#la-bail-reform-act-of-1966" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">La Bail Reform Act of 1966</a>
+                                </li>
+                                                            <li>
+                                    <a href="#el-desarrollo-de-los-servicios-previos-al-juicio" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">El desarrollo de los servicios previos al juicio</a>
+                                </li>
+                                                            <li>
+                                    <a href="#la-bail-reform-act-of-1984" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">La Bail Reform Act of 1984</a>
+                                </li>
+                                                            <li>
+                                    <a href="#como-funciona-la-libertad-previa-al-juicio-moderna" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">Cómo funciona la libertad previa al juicio moderna</a>
+                                </li>
+                                                            <li>
+                                    <a href="#la-funcion-del-oficial-de-servicios-previos-al-juicio" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">La función del oficial de servicios previos al juicio</a>
+                                </li>
+                                                            <li>
+                                    <a href="#decisiones-judiciales-sobre-la-libertad-o-la-detencion" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">Decisiones judiciales sobre la libertad o la detención</a>
+                                </li>
+                                                            <li>
+                                    <a href="#la-fianza-y-la-presuncion-de-inocencia" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">La fianza y la presunción de inocencia</a>
+                                </li>
+                                                            <li>
+                                    <a href="#la-fianza-y-la-desigualdad-economica" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">La fianza y la desigualdad económica</a>
+                                </li>
+                                                            <li>
+                                    <a href="#condiciones-de-la-libertad-previa-al-juicio" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">Condiciones de la libertad previa al juicio</a>
+                                </li>
+                                                            <li>
+                                    <a href="#incumplimientos-y-revocacion" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">Incumplimientos y revocación</a>
+                                </li>
+                                                            <li>
+                                    <a href="#la-evolucion-continua-de-los-sistemas-de-fianza" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">La evolución continua de los sistemas de fianza</a>
+                                </li>
+                                                            <li>
+                                    <a href="#conclusion" @click="open = false" class="-ml-0.5 block border-l-2 border-transparent py-2 pl-4 leading-snug text-body transition hover:border-brand-500 hover:text-ink">Conclusión</a>
+                                </li>
+                                                    </ol>
+                    </nav>
+                </aside>
+            
+            <div class="min-w-0 lg:col-span-8">
+                <div class="article-body">
+    <p>La libertad previa al juicio se refiere a los mecanismos legales mediante los cuales una persona acusada de un delito puede permanecer en la comunidad mientras espera el juicio u otros procedimientos judiciales. La fianza es una forma de libertad previa al juicio, pero los sistemas modernos pueden incluir la libertad bajo palabra (personal recognizance), las fianzas no garantizadas, las fianzas económicas, la supervisión, el monitoreo electrónico, las restricciones de viaje y otras condiciones.</p>
+<p>El propósito subyacente de los sistemas previos al juicio es equilibrar varios intereses: proteger la integridad de los procedimientos judiciales, garantizar que los acusados comparezcan ante el tribunal, atender las preocupaciones legítimas de seguridad pública y evitar la detención innecesaria antes de que una persona haya sido condenada. El equilibrio exacto varía considerablemente entre jurisdicciones. El Bureau of Justice Statistics (BJS) describe la libertad previa al juicio como un espectro que va desde la libertad bajo palabra hasta las condiciones económicas, el monitoreo electrónico y la libertad supervisada.</p>
+<h2 id="los-primeros-origenes-de-la-fianza">Los primeros orígenes de la fianza</h2>
+<p>El concepto moderno de fianza tiene sus raíces en las tradiciones jurídicas inglesas. Los Estados Unidos heredaron muchos de estos principios y los incorporaron a su propio marco constitucional y legal.</p>
+<p>Los U.S. Courts remontan las prácticas estadounidenses de fianza al common law y al derecho codificado inglés, y señalan la importancia histórica del English Bill of Rights de 1689, que abordó las fianzas excesivas. Tras la formación de los Estados Unidos, los estados desarrollaron sus propios enfoques de la libertad previa al juicio, mientras que la legislación federal estableció normas adicionales para los tribunales federales.</p>
+<p>La Judiciary Act of 1789 representó un importante avance federal temprano. Según el relato histórico de los U.S. Courts, la legislación generalmente preveía la libertad de los acusados en los casos no capitales y otorgaba a los funcionarios judiciales la facultad de determinar las condiciones adecuadas.</p>
+<h2 id="el-modelo-tradicional-de-fianza-monetaria">El modelo tradicional de fianza monetaria</h2>
+<p>Históricamente, la garantía económica desempeñó un papel importante para asegurar que una persona acusada regresara ante el tribunal. Un acusado podía aportar dinero u otra garantía, directamente o mediante otra forma de fianza, como incentivo para cumplir los requisitos del tribunal.</p>
+<p>Con el tiempo, surgieron preocupaciones sobre si los recursos económicos debían determinar quién permanecía en libertad antes del juicio. Una persona con suficiente dinero podía obtener su libertad, mientras que otra acusada de un delito similar podía permanecer encarcelada por no poder pagar.</p>
+<p>El movimiento de reforma resultante examinó cada vez más alternativas a la dependencia principal de los recursos económicos.</p>
+<h2 id="el-movimiento-de-reforma-de-la-fianza">El movimiento de reforma de la fianza</h2>
+<p>Un cambio importante se produjo durante el siglo XX. El Manhattan Bail Project del Vera Institute, iniciado a principios de la década de 1960, exploró si los acusados podían ser puestos en libertad con base en información verificada sobre sus antecedentes y sus vínculos con la comunidad, en lugar de únicamente en sus recursos económicos. Los U.S. Courts identifican el proyecto como una influencia importante en el movimiento nacional de reforma de la fianza.</p>
+<p>La National Conference on Bail, convocada en 1964, examinó con mayor detalle los problemas asociados con las prácticas de fianza existentes. El movimiento de reforma resultante contribuyó a cambios legislativos federales diseñados para reducir la detención preventiva innecesaria.</p>
+<h2 id="la-bail-reform-act-of-1966">La Bail Reform Act of 1966</h2>
+<p>El Congreso promulgó la Bail Reform Act of 1966 federal como una reestructuración importante de la libertad previa al juicio en el ámbito federal. La ley establecía que las personas no debían ser detenidas innecesariamente debido a sus circunstancias económicas cuando la detención no era exigida por los intereses de la justicia o el interés público.</p>
+<p>El marco de 1966 hizo hincapié en la libertad en lugar de la detención y exigió que los tribunales consideraran las condiciones menos restrictivas razonablemente necesarias para asegurar la comparecencia del acusado.</p>
+<p>Los posibles mecanismos incluían la libertad bajo palabra y otras condiciones no económicas. Las condiciones económicas seguían siendo posibles, pero el sistema ya no estaba diseñado en torno al dinero como único factor determinante de si una persona podía permanecer fuera de custodia.</p>
+<h2 id="el-desarrollo-de-los-servicios-previos-al-juicio">El desarrollo de los servicios previos al juicio</h2>
+<p>La Bail Reform Act creó la necesidad de contar con información confiable sobre los acusados. Los tribunales necesitaban información sobre factores como los vínculos con la comunidad, el empleo, los antecedentes penales y las comparecencias anteriores ante el tribunal.</p>
+<p>El Congreso atendió esta necesidad institucional mediante la Speedy Trial Act of 1974, que autorizó agencias de servicios previos al juicio de demostración en diez distritos judiciales federales. Estas agencias investigaban a los acusados, proporcionaban información a los funcionarios judiciales, supervisaban a ciertos acusados puestos en libertad y ayudaban a vincular a los acusados con servicios comunitarios.</p>
+<p>Posteriormente, la Pretrial Services Act of 1982 autorizó la ampliación de los servicios previos al juicio a los distritos judiciales federales de todo el país, estableciendo la base del sistema federal que funciona hoy.</p>
+<h2 id="la-bail-reform-act-of-1984">La Bail Reform Act of 1984</h2>
+<p>La Bail Reform Act of 1984 federal marcó otro cambio importante. A diferencia del marco de 1966, que se centraba principalmente en asegurar la comparecencia, la ley de 1984 permitió a los tribunales considerar el peligro para la comunidad al determinar si un acusado debía ser puesto en libertad o detenido.</p>
+<p>Los tribunales federales describen la legislación como un cambio fundamental en el procedimiento federal previo al juicio porque autorizó la detención con base en la peligrosidad, además del riesgo de fuga.</p>
+<p>En el sistema federal, los tribunales consideran si las condiciones pueden asegurar razonablemente la comparecencia del acusado y la seguridad de otras personas. La ley generalmente orienta a los tribunales hacia las condiciones menos restrictivas que puedan cumplir esos propósitos.</p>
+<h2 id="como-funciona-la-libertad-previa-al-juicio-moderna">Cómo funciona la libertad previa al juicio moderna</h2>
+<p>Los sistemas modernos previos al juicio pueden implicar varios mecanismos de libertad diferentes.</p>
+<h3>Libertad bajo palabra</h3>
+<p>Un acusado puede ser puesto en libertad con base principalmente en la promesa de comparecer ante el tribunal y cumplir las condiciones aplicables. Puede no exigirse ningún pago económico por adelantado.</p>
+<h3>Fianzas no garantizadas</h3>
+<p>Una fianza no garantizada implica una obligación económica que puede volverse exigible si el acusado incumple los requisitos aplicables, sin requerir necesariamente un pago antes de la liberación.</p>
+<h3>Fianza en efectivo</h3>
+<p>La fianza en efectivo exige el pago de un monto determinado como condición para la libertad. El tratamiento del dinero una vez concluido el caso depende de la jurisdicción y de las circunstancias.</p>
+<h3>Fianzas de garantía o sobre bienes</h3>
+<p>Algunas jurisdicciones permiten la libertad garantizada mediante un fiador o un interés sobre bienes. Las fianzas de garantía comerciales pueden implicar a un tercero que garantiza la obligación económica requerida.</p>
+<h3>Libertad supervisada antes del juicio</h3>
+<p>La supervisión previa al juicio puede incluir la presentación periódica, pruebas de drogas, requisitos de tratamiento, condiciones de empleo, monitoreo de ubicación u otras restricciones.</p>
+<h3>Monitoreo electrónico</h3>
+<p>Los tribunales pueden imponer el monitoreo electrónico o restricciones de ubicación en los casos apropiados. Estas medidas pueden permitir que un acusado permanezca en la comunidad y, al mismo tiempo, imponer controles adicionales.</p>
+<p>El BJS identifica la libertad bajo palabra, la fianza en efectivo, las fianzas de garantía o sobre bienes, el monitoreo electrónico y la supervisión previa al juicio entre los mecanismos utilizados en las jurisdicciones de los EE. UU.</p>
+<h2 id="la-funcion-del-oficial-de-servicios-previos-al-juicio">La función del oficial de servicios previos al juicio</h2>
+<p>En el sistema federal, los oficiales de servicios previos al juicio recopilan información y preparan informes para los funcionarios judiciales. La información puede incluir las circunstancias personales pertinentes para la decisión sobre la libertad.</p>
+<p>Según las circunstancias, los oficiales pueden recomendar condiciones como pruebas de drogas, tratamiento, requisitos de empleo, monitoreo de ubicación, restricciones de viaje, restricciones sobre armas o limitaciones al contacto con víctimas o testigos.</p>
+<p>El propósito no es simplemente determinar si un acusado puede pagar dinero. En cambio, el sistema federal moderno utiliza información sobre la persona y el caso para ayudar a determinar qué condiciones pueden atender razonablemente los riesgos identificados.</p>
+<h2 id="decisiones-judiciales-sobre-la-libertad-o-la-detencion">Decisiones judiciales sobre la libertad o la detención</h2>
+<p>Un juez puede considerar diversos factores al determinar si un acusado debe ser puesto en libertad y en qué condiciones.</p>
+<p>Estos pueden incluir:</p>
+<ul>
+<li>La naturaleza y las circunstancias del presunto delito</li>
+<li>El peso de las pruebas</li>
+<li>Los antecedentes penales</li>
+<li>Las comparecencias anteriores ante el tribunal</li>
+<li>Los vínculos comunitarios y familiares</li>
+<li>El empleo</li>
+<li>La residencia</li>
+<li>Las circunstancias económicas</li>
+<li>El cumplimiento previo de los requisitos del tribunal</li>
+<li>El posible peligro para otras personas</li>
+</ul>
+<p>Los factores y procedimientos precisos dependen de la jurisdicción aplicable. La ley federal establece un marco legal específico, mientras que los sistemas estatales pueden utilizar normas sustancialmente diferentes.</p>
+<h2 id="la-fianza-y-la-presuncion-de-inocencia">La fianza y la presunción de inocencia</h2>
+<p>La detención preventiva ocurre antes de que un cargo penal se haya resuelto mediante un juicio u otra resolución definitiva. Esto crea una distinción importante entre las restricciones previas al juicio y el castigo posterior a una condena.</p>
+<p>El sistema federal previo al juicio reconoce la necesidad de equilibrar la presunción de inocencia y los intereses de libertad frente a las preocupaciones sobre la comparecencia ante el tribunal y la seguridad pública. Los U.S. Courts describen este equilibrio como central en las decisiones judiciales sobre la libertad y la detención.</p>
+<p>En consecuencia, la detención preventiva es legalmente distinta de una condena penal, aunque la detención puede tener consecuencias prácticas significativas para una persona acusada.</p>
+<h2 id="la-fianza-y-la-desigualdad-economica">La fianza y la desigualdad económica</h2>
+<p>Uno de los debates de larga data en torno a la fianza se refiere a la relación entre los recursos económicos y la libertad previa al juicio.</p>
+<p>La reforma federal de 1966 buscó específicamente reducir la detención innecesaria derivada de la incapacidad de una persona para pagar. El propósito declarado de la ley era evitar que las personas fueran detenidas innecesariamente debido a su situación económica.</p>
+<p>Las jurisdicciones modernas difieren considerablemente en cuánto dependen de las condiciones económicas. El BJS señala que algunas jurisdicciones utilizan tablas de fianzas, mientras que otras se basan más en decisiones de libertad individualizadas.</p>
+<p>Esta variación significa que el significado práctico de la &quot;fianza&quot; puede diferir significativamente de una jurisdicción a otra.</p>
+<h2 id="condiciones-de-la-libertad-previa-al-juicio">Condiciones de la libertad previa al juicio</h2>
+<p>La libertad no significa necesariamente una libertad sin restricciones. Los tribunales pueden imponer condiciones destinadas a atender las preocupaciones identificadas.</p>
+<p>Las condiciones pueden incluir:</p>
+<ul>
+<li>Comparecer en los procedimientos judiciales programados</li>
+<li>Permanecer dentro de una zona geográfica determinada</li>
+<li>Entregar el pasaporte</li>
+<li>Evitar el contacto con determinadas personas</li>
+<li>Abstenerse de poseer armas</li>
+<li>Someterse a pruebas de drogas o alcohol</li>
+<li>Participar en un tratamiento</li>
+<li>Presentarse ante los servicios previos al juicio</li>
+<li>Mantener un empleo</li>
+<li>Cumplir con el monitoreo electrónico</li>
+</ul>
+<p>En los casos federales, los U.S. Courts explican que las condiciones deben adaptarse para asegurar razonablemente la comparecencia ante el tribunal y la seguridad de la comunidad, utilizando la combinación menos restrictiva necesaria.</p>
+<h2 id="incumplimientos-y-revocacion">Incumplimientos y revocación</h2>
+<p>La libertad previa al juicio es condicional. Un acusado que incumple los requisitos de su libertad puede enfrentar consecuencias que pueden incluir la modificación o la revocación de la libertad, según la ley aplicable.</p>
+<p>La falta de comparecencia también puede generar consecuencias legales adicionales. Un tribunal puede emitir una orden de arresto, imponer sanciones o reconsiderar si es apropiado mantener la libertad.</p>
+<p>Por esta razón, las condiciones de la libertad deben tratarse como requisitos legales exigibles y no como recomendaciones informales.</p>
+<h2 id="la-evolucion-continua-de-los-sistemas-de-fianza">La evolución continua de los sistemas de fianza</h2>
+<p>La historia de la fianza demuestra un movimiento gradual desde sistemas muy dependientes de las garantías económicas hacia mecanismos más variados que implican una evaluación y una supervisión individualizadas.</p>
+<p>El sistema federal ilustra esta evolución con especial claridad: las reformas de 1966 hicieron hincapié en la libertad y redujeron la dependencia de los recursos económicos; las reformas de 1974 introdujeron servicios previos al juicio experimentales; la legislación de 1982 amplió esos servicios a todo el país; y la Bail Reform Act of 1984 incorporó consideraciones de seguridad pública a las decisiones federales de detención.</p>
+<p>Los tribunales federales actuales siguen examinando formas de utilizar datos, supervisión y enfoques basados en pruebas mientras reducen la detención preventiva innecesaria.</p>
+<h2 id="conclusion">Conclusión</h2>
+<p>Los sistemas de fianza han evolucionado considerablemente desde los modelos tradicionales en los que la garantía económica desempeñaba un papel central para determinar la libertad previa al juicio. Los sistemas modernos previos al juicio pueden utilizar la libertad bajo palabra, las fianzas económicas, la supervisión, el monitoreo electrónico, los requisitos de tratamiento y otras condiciones.</p>
+<p>La experiencia federal demuestra cómo se desarrollaron estos mecanismos mediante reformas sucesivas. La Bail Reform Act of 1966 buscó reducir la detención innecesaria basada en las circunstancias económicas, mientras que el desarrollo de los servicios previos al juicio creó un mecanismo formal para recopilar información y supervisar a los acusados. Posteriormente, la Bail Reform Act of 1984 amplió los fundamentos de la detención preventiva federal para incluir las preocupaciones de seguridad pública.</p>
+<p>Hoy en día, el funcionamiento de la libertad previa al juicio depende en gran medida de la jurisdicción. Algunos sistemas siguen utilizando ampliamente la fianza monetaria, mientras que otros dan mayor énfasis a las evaluaciones individualizadas y a las condiciones no económicas. Comprender estas diferencias es esencial para entender cómo se determina la situación previa al juicio de una persona acusada y qué obligaciones acompañan a la libertad.</p>
+<div class="references"><h2 id="referencias">Referencias</h2>
+<ol>
+<li><a rel="nofollow noopener noreferrer" target="_blank" href="https://www.uscourts.gov/about-federal-courts/probation-and-pretrial-services/probation-and-pretrial-services-history">Probation and Pretrial Services History — U.S. Courts</a></li>
+<li><a rel="nofollow noopener noreferrer" target="_blank" href="https://www.uscourts.gov/about-federal-courts/probation-and-pretrial-services/pretrial-services/pretrial-release-and-detention-federal-judiciary">Pretrial Release and Detention in the Federal Judiciary — U.S. Courts</a></li>
+<li><a rel="nofollow noopener noreferrer" target="_blank" href="https://www.uscourts.gov/about-federal-courts/probation-and-pretrial-services/pretrial-services">Pretrial Services — U.S. Courts</a></li>
+<li><a rel="nofollow noopener noreferrer" target="_blank" href="https://bjs.ojp.gov/topics/courts/pretrial-release">Pretrial Release — Bureau of Justice Statistics</a></li>
+<li><a rel="nofollow noopener noreferrer" target="_blank" href="https://www.congress.gov/89/statute/STATUTE-80/STATUTE-80-Pg214.pdf">Bail Reform Act of 1966 — Public Law 89-465</a></li>
+<li><a rel="nofollow noopener noreferrer" target="_blank" href="https://bjs.ojp.gov/library/publications/pretrial-release-and-misconduct-federal-district-courts-fiscal-years-2011-2018">Pretrial Release and Misconduct in Federal District Courts, Fiscal Years 2011–2018 — Bureau of Justice Statistics</a></li>
+<li><a rel="nofollow noopener noreferrer" target="_blank" href="https://www.miept.uscourts.gov/historical_background.cfm">United States Pretrial Services Agency — Historical Background</a></li>
+</ol>
+</div>
+</div>
+
+                
+                <div class="mt-16 overflow-hidden rounded-md border border-line bg-surface">
+                    <div class="flex items-center gap-4 border-t-4 border-zest-400 bg-navy-950 p-6 sm:px-8">
+                        <span class="size-16 text-lg !ring-navy-700 flex shrink-0 items-center justify-center rounded-full bg-navy-800 font-mono font-semibold text-zest-400 ring-2 ring-surface" aria-hidden="true">
+        DF
+    </span>
+                        <div>
+                            <p class="font-mono text-[11px] font-semibold tracking-[0.18em] text-zest-400 uppercase">Escrito por</p>
+                            <p class="mt-1 font-display text-2xl font-bold text-white">Daniel Foster</p>
+                            <p class="text-sm text-navy-300">Litigios civiles y derechos laborales</p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:px-8">
+                                                    <p class="leading-relaxed text-body">Daniel Foster es redactor jurídico y especialista en defensa del consumidor, centrado en litigios civiles, responsabilidad civil y derechos laborales.</p>
+                                                <a href="/es/author/daniel-foster" wire:navigate class="btn-ghost mt-6">Leer biografía completa</a>
+                    </div>
+                </div>
+
+                <p class="mt-8 flex gap-3 rounded-md bg-soft p-5 text-sm leading-relaxed text-muted">
+                    <svg class="shrink-0 [:where(&amp;)]:size-5 size-5 shrink-0 text-brand-500" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd"/>
+</svg>
+
+                            <span>
+                        <span class="font-bold text-body">Contenido exclusivamente educativo.</span>
+                        Este artículo tiene fines informativos generales y no constituye asesoramiento legal, financiero o profesional personalizado.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </article>
+
+    
+            <section class="border-t border-line bg-surface">
+            <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+                <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+                    <div>
+                        <span class="eyebrow">Siga aprendiendo</span>
+                        <h2 class="mt-3 font-display text-3xl font-semibold text-ink">Más en Derecho penal y laboral</h2>
+                    </div>
+                    <a href="/es/c/criminal-employment" wire:navigate class="link-underline text-sm font-semibold text-ink">Ver todo</a>
+                </div>
+                <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                                            <a href="/es/p/the-philosophy-of-criminal-defense-and-constitutional-protections" wire:navigate class="group flex flex-col">
+        <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md">
+            <img
+        src="/images/articles/the-philosophy-of-criminal-defense-and-constitutional-protections.webp"
+        alt="La filosofía de la defensa penal y las protecciones constitucionales"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
+    />
+            <span class="tag absolute bottom-3 left-3">Derecho penal y laboral</span>
+        </div>
+        <div class="flex flex-1 flex-col pt-5">
+            <p class="flex items-center gap-2 text-xs font-semibold text-muted">
+                <time datetime="2026-09-27">27 sep. 2026</time>
+                <span class="h-3 w-px bg-line"></span>
+                10 min de lectura
+            </p>
+            <h3 class="mt-2.5 font-display text-xl leading-snug font-bold text-balance text-ink decoration-zest-400 decoration-[3px] underline-offset-4 group-hover:underline">
+                La filosofía de la defensa penal y las protecciones constitucionales
+            </h3>
+            <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-muted">La defensa penal se basa en un principio central del gobierno constitucional: el poder de acusar, investigar, procesar y castigar debe ejercerse dentro de límites legales...</p>
+            <div class="mt-auto flex items-center gap-2 pt-5 text-xs">
+                <span class="size-7 text-[10px] flex shrink-0 items-center justify-center rounded-full bg-navy-800 font-mono font-semibold text-zest-400 ring-2 ring-surface" aria-hidden="true">
+        DF
+    </span>
+                <span class="truncate font-bold text-body">Daniel Foster</span>
+            </div>
+        </div>
+    </a>
+                                            <a href="/es/p/impaired-driving-statistics-breathalyzer-technology-and-public-safety" wire:navigate class="group flex flex-col">
+        <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md">
+            <img
+        src="/images/articles/impaired-driving-statistics-breathalyzer-technology-and-public-safety.webp"
+        alt="Estadísticas sobre la conducción bajo los efectos, tecnología de alcoholímetros y seguridad pública"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
+    />
+            <span class="tag absolute bottom-3 left-3">Derecho penal y laboral</span>
+        </div>
+        <div class="flex flex-1 flex-col pt-5">
+            <p class="flex items-center gap-2 text-xs font-semibold text-muted">
+                <time datetime="2026-09-23">23 sep. 2026</time>
+                <span class="h-3 w-px bg-line"></span>
+                13 min de lectura
+            </p>
+            <h3 class="mt-2.5 font-display text-xl leading-snug font-bold text-balance text-ink decoration-zest-400 decoration-[3px] underline-offset-4 group-hover:underline">
+                Estadísticas sobre la conducción bajo los efectos, tecnología de alcoholímetros y seguridad pública
+            </h3>
+            <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-muted">La conducción bajo los efectos del alcohol u otras sustancias sigue siendo un problema importante de seguridad pública, en particular cuando el alcohol u otras sustancias...</p>
+            <div class="mt-auto flex items-center gap-2 pt-5 text-xs">
+                <span class="size-7 text-[10px] flex shrink-0 items-center justify-center rounded-full bg-navy-800 font-mono font-semibold text-zest-400 ring-2 ring-surface" aria-hidden="true">
+        DF
+    </span>
+                <span class="truncate font-bold text-body">Daniel Foster</span>
+            </div>
+        </div>
+    </a>
+                                            <a href="/es/p/global-drug-policy-reform-and-controlled-substance-regulation-history" wire:navigate class="group flex flex-col">
+        <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md">
+            <img
+        src="/images/articles/global-drug-policy-reform-and-controlled-substance-regulation-history.webp"
+        alt="La reforma de la política global de drogas y la historia de la regulación de sustancias controladas"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
+    />
+            <span class="tag absolute bottom-3 left-3">Derecho penal y laboral</span>
+        </div>
+        <div class="flex flex-1 flex-col pt-5">
+            <p class="flex items-center gap-2 text-xs font-semibold text-muted">
+                <time datetime="2026-09-19">19 sep. 2026</time>
+                <span class="h-3 w-px bg-line"></span>
+                11 min de lectura
+            </p>
+            <h3 class="mt-2.5 font-display text-xl leading-snug font-bold text-balance text-ink decoration-zest-400 decoration-[3px] underline-offset-4 group-hover:underline">
+                La reforma de la política global de drogas y la historia de la regulación de sustancias controladas
+            </h3>
+            <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-muted">La política de drogas se ha desarrollado mediante un largo proceso de acuerdos internacionales, legislación nacional, investigación médica, respuestas de salud pública y...</p>
+            <div class="mt-auto flex items-center gap-2 pt-5 text-xs">
+                <span class="size-7 text-[10px] flex shrink-0 items-center justify-center rounded-full bg-navy-800 font-mono font-semibold text-zest-400 ring-2 ring-surface" aria-hidden="true">
+        LB
+    </span>
+                <span class="truncate font-bold text-body">Laura Bennett</span>
+            </div>
+        </div>
+    </a>
+                                    </div>
+            </div>
+        </section>
+            </main>
+
+        <footer class="bg-navy-950 text-navy-300">
+    <div class="rule-gold"></div>
+    
+    <div class="border-b border-navy-800">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-12 md:flex-row md:items-center lg:px-8">
+            <div class="max-w-2xl">
+                <p class="font-display text-3xl leading-tight font-bold text-white">Sepa en qué situación se encuentra antes de dar el siguiente paso.</p>
+                <p class="mt-2 text-navy-300">Guías en lenguaje sencillo sobre reclamaciones por lesiones, asuntos de familia e inmigración, derecho penal y laboral, y normas empresariales y de propiedad, actualizadas por nuestros editores.</p>
+            </div>
+            <a href="/es/articles" wire:navigate class="btn-zest shrink-0">
+                Ver todas las guías
+                <svg class="shrink-0 [:where(&amp;)]:size-5 size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/>
+</svg>
+
+                    </a>
+        </div>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-6 pt-14 pb-10 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+                <a href="/es" wire:navigate aria-label="Inicio de Casebook">
+                    <span class="inline-flex shrink-0 items-center gap-2.5">
+    <svg class="size-9 shrink-0" viewBox="0 0 32 32" aria-hidden="true">
+    <rect width="32" height="32" rx="7" fill="#0e0d0c" />
+    <text x="16" y="24.5" text-anchor="middle" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#fdd22b">&#167;</text>
+</svg>
+    <span class="font-display leading-none font-semibold tracking-tight text-[1.6rem] text-white">Casebook<span class="text-zest-400">.</span></span>
+</span>
+                </a>
+                <p class="mt-5 max-w-sm text-sm leading-relaxed">
+                    Guías independientes y basadas en la investigación que explican cómo funciona la ley en situaciones cotidianas, desde reclamaciones por lesiones y asuntos familiares hasta derechos laborales, negocios y propiedad.
+                </p>
+            </div>
+
+            <div class="grid gap-10 sm:grid-cols-3 lg:col-span-8">
+                <div>
+                    <p class="font-mono text-[11px] font-semibold tracking-[0.18em] text-zest-400 uppercase">Temas</p>
+                    <ul class="mt-5 space-y-3 text-sm">
+                                                    <li><a href="/es/c/personal-injury" wire:navigate class="transition hover:text-white">Derecho de lesiones personales y accidentes</a></li>
+                                                    <li><a href="/es/c/family-immigration" wire:navigate class="transition hover:text-white">Derecho de familia e inmigración</a></li>
+                                                    <li><a href="/es/c/criminal-employment" wire:navigate class="transition hover:text-white">Derecho penal y laboral</a></li>
+                                                    <li><a href="/es/c/business-property" wire:navigate class="transition hover:text-white">Derecho empresarial, inmobiliario y financiero</a></li>
+                                            </ul>
+                </div>
+                <div>
+                    <p class="font-mono text-[11px] font-semibold tracking-[0.18em] text-zest-400 uppercase">Casebook</p>
+                    <ul class="mt-5 space-y-3 text-sm">
+                        <li><a href="/es/articles" wire:navigate class="transition hover:text-white">Todos los artículos</a></li>
+                        <li><a href="/es/our-team" wire:navigate class="transition hover:text-white">Nuestro equipo editorial</a></li>
+                        <li><a href="/es/contact" wire:navigate class="transition hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-mono text-[11px] font-semibold tracking-[0.18em] text-zest-400 uppercase">Legal</p>
+                    <ul class="mt-5 space-y-3 text-sm">
+                        <li><a href="/es/privacy-policy" wire:navigate class="transition hover:text-white">Política de privacidad</a></li>
+                        <li><a href="/es/terms-of-use" wire:navigate class="transition hover:text-white">Términos de uso</a></li>
+                        <li><a href="/es/disclaimer" wire:navigate class="transition hover:text-white">Aviso legal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+                <div class="mt-14 space-y-3 border-t border-navy-800 pt-8 text-xs leading-relaxed text-navy-400">
+            <p>
+                <span class="font-bold text-navy-300">Aviso legal:</span>
+                El contenido proporcionado en Casebook tiene fines exclusivamente informativos y educativos y no debe interpretarse como asesoramiento legal, financiero o profesional. Casebook no es un bufete de abogados, y la lectura de nuestros artículos no crea una relación abogado-cliente ni sustituye el asesoramiento de un profesional con licencia que pueda revisar su situación específica.
+            </p>
+            <p>Las leyes, los plazos de presentación y los procedimientos varían según la jurisdicción y cambian con el tiempo. Antes de tomar cualquier decisión legal, financiera o personal, investigue por su cuenta y consulte a un profesional calificado y con licencia que comprenda su situación específica.</p>
+            <p>Casebook no ofrece declaraciones ni garantías sobre la exactitud, integridad o idoneidad de la información aquí contenida, y no asume ninguna responsabilidad por pérdidas o daños derivados del uso de este contenido.</p>
+        </div>
+
+        <div class="mt-8 flex flex-col items-center justify-between gap-3 text-xs text-navy-400 sm:flex-row">
+            <p>&copy; 2026 Casebook. Todos los derechos reservados.</p>
+            <p>casebook.example</p>
+        </div>
+    </div>
+</footer>
+
+        <div x-persist="toast">
+            <ui-toast-group x-data x-on:toast-show.document="$el.showToast($event.detail)" popover="manual" position="bottom end"  wire:ignore>
+    <ui-toast x-data x-on:toast-show.document="! $el.closest('ui-toast-group') && $el.showToast($event.detail)" popover="manual" position="bottom end" wire:ignore>
+    <template>
+        <div class="group/toast max-w-sm in-[ui-toast-group]:max-w-auto in-[ui-toast-group]:w-xs sm:in-[ui-toast-group]:w-sm" data-variant=""  data-flux-toast-dialog>
+            <div class="p-2 flex rounded-xl shadow-lg bg-white border border-zinc-200 border-b-zinc-300/80 dark:bg-zinc-700 dark:border-zinc-600 group-data-invert/toast:bg-zinc-800 group-data-invert/toast:border-zinc-700 dark:group-data-invert/toast:bg-white dark:group-data-invert/toast:border-zinc-200 dark:group-data-invert/toast:border-b-zinc-300/80">
+                <div class="flex-1 flex items-start gap-4 has-data-flux-toast-action:gap-2 overflow-hidden">
+                    <div class="flex-1 py-1.5 ps-2.5 flex gap-2">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="hidden [[data-flux-toast-dialog][data-variant=success]_&]:block shrink-0 mt-0.5 size-4 text-lime-600 dark:text-lime-400">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.844-8.791a.75.75 0 0 0-1.188-.918l-3.7 4.79-1.649-1.833a.75.75 0 1 0-1.114 1.004l2.25 2.5a.75.75 0 0 0 1.15-.043l4.25-5.5Z" clip-rule="evenodd" />
+                        </svg>
+
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="hidden [[data-flux-toast-dialog][data-variant=warning]_&]:block shrink-0 mt-0.5 size-4 text-amber-500 dark:text-amber-400">
+                            <path fill-rule="evenodd" d="M6.701 2.25c.577-1 2.02-1 2.598 0l5.196 9a1.5 1.5 0 0 1-1.299 2.25H2.804a1.5 1.5 0 0 1-1.3-2.25l5.197-9ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+                        </svg>
+
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="hidden [[data-flux-toast-dialog][data-variant=info]_&]:block shrink-0 mt-0.5 size-4 text-cyan-500 dark:text-cyan-400">
+                            <path fill-rule="evenodd" d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0ZM9 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6.75 8a.75.75 0 0 0 0 1.5h.75v1.75a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8.25 8h-1.5Z" clip-rule="evenodd" />
+                        </svg>
+
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="hidden [[data-flux-toast-dialog][data-variant=danger]_&]:block shrink-0 mt-0.5 size-4 text-rose-500 dark:text-rose-400">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+                        </svg>
+
+                        <div>
+                            
+                            <div class="font-medium text-sm text-zinc-800 dark:text-white group-data-invert/toast:text-white dark:group-data-invert/toast:text-zinc-800 [&:not(:empty)+div]:font-normal [&:not(:empty)+div]:text-zinc-500 [&:not(:empty)+div]:dark:text-zinc-300 group-data-invert/toast:[&:not(:empty)+div]:text-zinc-300 dark:group-data-invert/toast:[&:not(:empty)+div]:text-zinc-500 [&:not(:empty)]:pb-2"><slot name="heading"></slot></div>
+
+                            
+                            <div class="font-medium text-sm text-zinc-800 dark:text-white group-data-invert/toast:text-white dark:group-data-invert/toast:text-zinc-800"><slot name="text"></slot></div>
+
+                            
+                            <template name="link">
+                                <a class="block mt-2 font-medium text-sm text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)] underline underline-offset-[6px] hover:decoration-current group-data-invert/toast:text-white group-data-invert/toast:decoration-white/20 dark:group-data-invert/toast:text-zinc-800 dark:group-data-invert/toast:decoration-zinc-800/20"><slot name="text"></slot></a>
+                            </template>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        
+                        <template name="action">
+                            <div class="flex items-center" data-flux-toast-action>
+                                <button type="button" data-flux-toast-action-button class="relative inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-zinc-800/5 px-3 text-sm font-medium text-zinc-800 hover:bg-zinc-800/10 data-loading:pointer-events-none dark:bg-white/10 dark:text-white dark:hover:bg-white/20 group-data-invert/toast:bg-white/10 group-data-invert/toast:text-white group-data-invert/toast:hover:bg-white/20 dark:group-data-invert/toast:bg-zinc-800/5 dark:group-data-invert/toast:text-zinc-800 dark:group-data-invert/toast:hover:bg-zinc-800/10 [&[data-loading]_[data-flux-toast-action-label]]:opacity-0 [&[data-loading]_[data-flux-loading-indicator]]:opacity-100">
+                                    <span class="transition-opacity" data-flux-toast-action-label></span>
+                                    <span class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity" data-flux-loading-indicator>
+                                        <svg class="size-4 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8V0C5.373 0 0 5.373 0 12h4Z"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <a data-flux-toast-action-link class="inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-zinc-800/5 px-3 text-sm font-medium text-zinc-800 hover:bg-zinc-800/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 group-data-invert/toast:bg-white/10 group-data-invert/toast:text-white group-data-invert/toast:hover:bg-white/20 dark:group-data-invert/toast:bg-zinc-800/5 dark:group-data-invert/toast:text-zinc-800 dark:group-data-invert/toast:hover:bg-zinc-800/10">
+                                    <span data-flux-toast-action-label></span>
+                                </a>
+                            </div>
+                        </template>
+
+                        
+                        <ui-close class="flex items-center">
+                            <button type="button" class="inline-flex items-center font-medium justify-center gap-2 truncate disabled:opacity-50 dark:disabled:opacity-75 disabled:cursor-default h-8 text-sm rounded-md w-8 bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-400 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white group-data-invert/toast:hover:bg-white/15 group-data-invert/toast:hover:text-white dark:group-data-invert/toast:hover:bg-zinc-800/5 dark:group-data-invert/toast:hover:text-zinc-800" as="button">
+                                <div>
+                                    <svg class="[:where(&)]:size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                        </ui-close>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</ui-toast>
+</ui-toast-group>
+        </div>
+
+        <script src="/flux/flux.min.js?id=c60bf509" data-navigate-once></script>
+    <script src="/livewire-21163892/livewire.js?id=0ae8dee3"   data-csrf="SOpvae1dt9mIRpqroqDoBpeRwGwHzyFY4Ci7JwqV" data-module-url="/livewire-21163892" data-update-uri="/livewire-21163892/update" data-navigate-once="true"></script>
+</body>
+</html>
