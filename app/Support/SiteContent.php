@@ -233,6 +233,17 @@ class SiteContent
     /**
      * @return array<string, mixed>|null
      */
+    /**
+     * The homepage's main articles, in the order set in articles.php.
+     */
+    public static function mainArticles(): Collection
+    {
+        return collect(static::data()['main_articles'] ?? [])
+            ->map(fn (string $slug) => static::article($slug))
+            ->filter()
+            ->values();
+    }
+
     public static function program(string $slug): ?array
     {
         return static::programs()->firstWhere('slug', $slug);

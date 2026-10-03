@@ -43,7 +43,8 @@
     </a>
 @else
     <a href="{{ route('article', $article['slug']) }}" wire:navigate class="group flex flex-col">
-        <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md">
+        {{-- Media buying covers carry their headline in the image, so show them uncropped (16:9) --}}
+        <div @class(['relative flex items-center justify-center overflow-hidden rounded-md', $article['section'] === 'media-buying' ? 'aspect-video' : 'aspect-[4/3]'])>
             @include('partials.article-art')
             <span class="tag absolute bottom-3 left-3">{{ $article['section_title'] }}</span>
         </div>

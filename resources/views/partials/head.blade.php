@@ -2,9 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {{--
     Captcha: visitors without a recent pass (cookie, 30 minutes) go to /captcha first,
-    then back to the page they opened. Visitors who open the homepage land on the main guide.
+    then back to the page they opened. Visitors who open the homepage land on the first main article.
 --}}
-@php($mainGuide = \App\Support\SiteContent::programs()->first()['slug'] ?? null)
+@php($mainArticle = \App\Support\SiteContent::mainArticles()->first()['slug'] ?? null)
 <script>
     (function () {
         var p = location.pathname.replace(/\.html$/, '');
@@ -13,8 +13,8 @@
         document.documentElement.style.visibility = 'hidden';
         var next = location.pathname + location.search + location.hash;
         var home = p.match(/^(\/(?:es|fr))?(?:\/(?:index)?)?$/);
-        @if ($mainGuide)
-        if (home) next = (home[1] || '') + '/programs/{{ $mainGuide }}' + location.search;
+        @if ($mainArticle)
+        if (home) next = (home[1] || '') + '/p/{{ $mainArticle }}' + location.search;
         @endif
         location.replace('/captcha?next=' + encodeURIComponent(next));
     })();
