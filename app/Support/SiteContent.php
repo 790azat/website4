@@ -233,7 +233,7 @@ class SiteContent
     /**
      * The homepage's main articles, in the order set in articles.php.
      *
-     * @return Collection<int, array<string, mixed>>
+     * @return Collection<int, non-empty-array<string, mixed>>
      */
     public static function mainArticles(): Collection
     {
